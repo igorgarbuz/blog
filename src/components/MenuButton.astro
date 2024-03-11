@@ -1,0 +1,51 @@
+---
+const props = Astro.props
+---
+
+<button
+    class="menu-button"
+    aria-label="Open Menu"
+    aria-expanded="false"
+    aria-controls="nav-links"
+    {...props}
+>
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+</button>
+
+<style>
+    .menu-button {
+        -webkit-tap-highlight-color: transparent;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        height: 22px;
+        justify-content: space-between;
+        line-height: 0;
+        padding: 0;
+        width: 26px;
+    }
+
+    .menu-button div {
+        background-color: var(--clr-txt);
+        border-radius: 5px;
+        height: 2px;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
+    .change .bar1 {
+        transform: rotate(-45deg) translate(-7px, 7px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        transform: rotate(45deg) translate(-7px, -7px);
+    }
+</style>

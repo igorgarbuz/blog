@@ -1,0 +1,42 @@
+{
+    "extends": "astro/tsconfigs/strict",
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "baseUrl": "src",
+        "jsx": "react-jsx",
+        "strictNullChecks": true,
+        "paths": {
+            "@assets/*": [
+                "assets/*"
+            ],
+            "@config": [
+                "config.ts"
+            ],
+            "@components/*": [
+                "components/*"
+            ],
+            "@content/*": [
+                "content/*"
+            ],
+            "@layouts/*": [
+                "layouts/*"
+            ],
+            "@types": [
+                "types.ts"
+            ],
+            "@pages/*": [
+                "pages/*"
+            ],
+            "@styles/*": [
+                "styles/*"
+            ],
+            "@utils/*": [
+                "utils/*"
+            ],
+        },
+    },
+}

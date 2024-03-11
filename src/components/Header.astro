@@ -1,0 +1,94 @@
+---
+import { SITE } from "@config"
+import SearchIcon from "@components/SearchIcon.astro"
+import MenuButton from "@components/MenuButton.astro"
+
+export interface Props {
+    activeNav?: "posts" | "tags" | "about" | "search"
+}
+
+const { activeNav } = Astro.props
+---
+
+<header>
+    <nav class="nav-container">
+        <a href="/" id="site-title">
+            {SITE.title}
+        </a>
+        <div id="nav-links-container">
+            <ul id="nav-links" aria-hidden="true">
+                <li>
+                    <a href="/posts/" class={activeNav === "posts" ? "active" : ""}> Posts </a>
+                </li>
+                <li>
+                    <a href="/tags/" class={activeNav === "tags" ? "active" : ""}> Tags </a>
+                </li>
+                <li>
+                    <a href="/about/" class={activeNav === "about" ? "active" : ""}> About </a>
+                </li>
+                <li>
+                    <a href="/search/" aria-label="search" title="Search">
+                        <SearchIcon />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <MenuButton style="margin-left: 20px" />
+    </nav>
+    <hr style="margin: 0" />
+</header>
+
+<style>
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        z-index: 1100;
+        padding: var(--spacing-16) 0;
+    }
+
+    #nav-links {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        margin: var(--spacing-24) 0 0;
+    }
+
+    #nav-links-container {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+    }
+
+    #nav-links-container.expanded {
+        grid-template-rows: 1fr;
+    }
+
+    li {
+        padding: var(--spacing-8);
+    }
+
+    /* Mobile first-class citizen, below styles for the desktop */
+    @media (min-width: 860px) {
+        #nav-links {
+            flex-direction: row;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const menuButton = document.querySelector(".menu-button")
+        const navLinks = document.querySelector("#nav-links-container")
+        if (menuButton && navLinks) {
+            menuButton.addEventListener("click", () => {
+                navLinks.classList.toggle("expanded")
+                menuButton.classList.toggle("change")
+            })
+        }
+    })
+</script>
