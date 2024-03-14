@@ -2,6 +2,7 @@
 import { SITE } from "@config"
 import SearchIcon from "@components/SearchIcon.astro"
 import MenuButton from "@components/MenuButton.astro"
+import ThemeSwitch from "@components/ThemeIcon.astro"
 
 export interface Props {
     activeNav?: "posts" | "tags" | "about" | "search"
@@ -28,12 +29,15 @@ const { activeNav } = Astro.props
                 </li>
                 <li>
                     <a href="/search/" aria-label="search" title="Search">
-                        <SearchIcon />
+                        <SearchIcon style="margin-top: 8px" />
                     </a>
+                </li>
+                <li>
+                    <ThemeSwitch />
                 </li>
             </ul>
         </div>
-        <MenuButton style="margin-left: 20px" />
+        <MenuButton class="menu-button-element" style="margin-left: 20px;" />
     </nav>
     <hr style="margin: 0" />
 </header>
@@ -47,6 +51,13 @@ const { activeNav } = Astro.props
         padding: var(--spacing-16) 0;
     }
 
+    /* needed as parent grid container to enable slide-down animation on mobile */
+    #nav-links-container {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+    }
+
     #nav-links {
         align-items: center;
         display: flex;
@@ -56,12 +67,6 @@ const { activeNav } = Astro.props
         padding: 0;
         position: relative;
         margin: var(--spacing-24) 0 0;
-    }
-
-    #nav-links-container {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.3s ease-out;
     }
 
     #nav-links-container.expanded {
@@ -74,8 +79,22 @@ const { activeNav } = Astro.props
 
     /* Mobile first-class citizen, below styles for the desktop */
     @media (min-width: 860px) {
+        .nav-container {
+            align-items: center;
+        }
         #nav-links {
             flex-direction: row;
+            margin: 0;
+        }
+        #nav-links-container {
+            grid-template-rows: 1fr;
+            transition: none;
+        }
+        .menu-button-element {
+            display: none;
+        }
+        li {
+            padding: 0 var(--spacing-16);
         }
     }
 </style>

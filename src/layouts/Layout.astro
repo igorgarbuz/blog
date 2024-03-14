@@ -1,7 +1,7 @@
 ---
-import "@styles/global.css"
 import "@styles/fonts.css"
 import "@styles/themes.css"
+import "@styles/global.css"
 import { SITE, LOCALE } from "@config"
 import type { Post } from "@types"
 import { ViewTransitions } from "astro:transitions"
@@ -38,20 +38,20 @@ const socialImageURL = new URL(
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="generator" content={Astro.generator} />
-        <!-- General Meta Tags -->
+        {/* General Meta Tags */}
         <title>{title}</title>
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="author" content={author} />
         <link rel="sitemap" href="/sitemap-index.xml" />
 
-        <!-- Open Graph / Facebook -->
+        {/* Open Graph / Facebook */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={socialImageURL} />
 
-        <!-- Article Published/Modified time -->
+        {/* Article Published/Modified time */}
         {
             datePublished && (
                 <meta property="article:published_time" content={datePublished.toISOString()} />
@@ -63,22 +63,20 @@ const socialImageURL = new URL(
             )
         }
 
-        <!-- Twitter -->
+        {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={canonicalUrl} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={socialImageURL} />
 
-        <!-- Google Font -->
+        {/* Google Font */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
             rel="stylesheet"
         />
-
-        <meta name="theme-color" content="" />
 
         {
             // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
@@ -90,37 +88,6 @@ const socialImageURL = new URL(
         }
 
         <ViewTransitions />
-
-        <script>
-            const htmlElement = document.documentElement
-            const userTheme = localStorage.theme
-            const isPreferredDarkMode = window.matchMedia("prefers-color-scheme: dark").matches
-            const isPreferredLightMode = window.matchMedia("prefers-color-scheme: light").matches
-
-            // if user has set a theme, use it
-            if (userTheme) {
-                htmlElement.dataset.theme = userTheme
-                // htmlElement.dataset.theme = "🌞 Day"
-            }
-
-            // if user has not set a theme, but prefers dark mode
-            if (!userTheme && isPreferredDarkMode) {
-                htmlElement.dataset.theme = "🌛 Night"
-                localStorage.theme = "🌛 Night"
-            }
-
-            // if user has not set a theme, but prefers light mode
-            if (!userTheme && isPreferredLightMode) {
-                htmlElement.dataset.theme = "🌞 Day"
-                localStorage.theme = "🌞 Day"
-            }
-
-            // no user preference and no preferred color scheme --> set default to dark mode
-            if (!userTheme && !isPreferredDarkMode && !isPreferredLightMode) {
-                htmlElement.dataset.theme = "🌛 Night"
-                localStorage.theme = "🌛 Night"
-            }
-        </script>
     </head>
     <body>
         <slot />

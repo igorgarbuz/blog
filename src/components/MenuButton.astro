@@ -1,9 +1,10 @@
 ---
 const props = Astro.props
+const { class: additionalClasses } = props
 ---
 
 <button
-    class="menu-button"
+    class={`menu-button ${additionalClasses}`}
     aria-label="Open Menu"
     aria-expanded="false"
     aria-controls="nav-links"
@@ -16,7 +17,6 @@ const props = Astro.props
 
 <style>
     .menu-button {
-        -webkit-tap-highlight-color: transparent;
         background: none;
         border: none;
         cursor: pointer;
@@ -30,7 +30,7 @@ const props = Astro.props
     }
 
     .menu-button div {
-        background-color: var(--clr-txt);
+        background-color: var(--color-txt);
         border-radius: 5px;
         height: 2px;
         transition: all 0.3s ease;

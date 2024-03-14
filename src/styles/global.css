@@ -40,7 +40,7 @@
     --spacing-128: 12.8rem;
 
     /* Scrollbar */
-	--clr-scrollbar-thumb: hsl(173 10% 20%);
+	--color-scrollbar-thumb: hsl(173 10% 20%);
 
 	/* Shadows */
 	--shadow-sm: 0px 0px 4px 4px hsl(0 0% 0% / 4%);
@@ -58,7 +58,7 @@ html {
     scroll-padding-top: var(--spacing-64);
 	scroll-behavior: smooth;
 	scrollbar-width: thin;
-	scrollbar-color: var(--clr-scrollbar-thumb) transparent;
+	scrollbar-color: var(--color-scrollbar-thumb) transparent;
 }
 
 html,
@@ -71,8 +71,8 @@ body {
 body {
     font-family: var(--font-sans);
     font-size: var(--font-16);
-    color: var(--clr-txt);
-    background-color: var(--clr-bg);
+    color: var(--color-txt);
+    background-color: var(--color-bg);
 }
 
 html[data-font='dyslexic'] body,
@@ -126,12 +126,12 @@ p {
 
 a {
     position: relative;
-    color: var(--clr-txt);
+    color: var(--color-txt);
     font-weight: 700;
 }
 
 a:hover {
-	color: var(--clr-link-hover);
+	color: var(--color-link-hover);
 }
 
 table {
@@ -143,11 +143,11 @@ th,
 td {
 	padding: var(--spacing-16);
 	text-align: left;
-	border: 1px solid var(--clr-txt-secondary);
+	border: 1px solid var(--color-txt-secondary);
 }
 
 hr {
-    background-color: var(--clr-txt-secondary);
+    background-color: var(--color-txt-secondary);
     border-radius: 2px;
     border: none;
     height: var(--spacing-1);

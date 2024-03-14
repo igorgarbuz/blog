@@ -1,17 +1,16 @@
-html[data-theme='🌛 Night'] {
-    /* Global */
-    --clr-txt: hsl(0, 0%, 100%);
-    --clr-txt-secondary: hsl(0, 0%, 50%);
-    --clr-bg: hsl(0, 0%, 7%);
-    --clr-card-bg: hsl(0, 0%, 25%);
-    --clr-link-hover: hsl(0, 0%, 70%);
+/* Dark is default */
+:root {
+    --color-txt: hsl(0, 0%, 100%);
+    --color-txt-secondary: hsl(0, 0%, 50%);
+    --color-bg: hsl(0, 0%, 7%);
+    --color-card-bg: hsl(0, 0%, 25%);
+    --color-link-hover: hsl(0, 0%, 70%);
 }
 
-html[data-theme='🌞 Day'] {
-    /* Global */
-    --clr-txt: hsl(0, 0%, 0%);
-    --clr-txt-secondary: hsl(0, 0%, 25%);
-    --clr-bg: hsl(0, 0%, 100%);
-    --clr-card-bg: hsl(0, 0%, 72%);
-    --clr-link-hover: hsl(0, 0%, 22%);
+html.light {
+    --color-txt: hsl(0, 0%, 0%);
+    --color-txt-secondary: hsl(0, 0%, 25%);
+    --color-bg: hsl(0, 0%, 100%);
+    --color-card-bg: hsl(0, 0%, 72%);
+    --color-link-hover: hsl(0, 0%, 22%);
 }

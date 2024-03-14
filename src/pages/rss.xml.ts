@@ -16,7 +16,7 @@ export const GET: APIRoute = async () => {
             pubDate: new Date(data.dateModified ?? data.datePublished),
             title: data.title,
         })),
-        site: SITE.website,
+        site: SITE.url,
         title: SITE.title,
     })
 }
