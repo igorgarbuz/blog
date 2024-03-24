@@ -1,5 +1,6 @@
 /* Dark is default */
 :root {
+    --color-bg-secondary: rgb(32, 33, 34);
     --color-bg: hsl(0, 0%, 7%);
     --color-card-bg: hsl(0, 0%, 25%);
     --color-txt-secondary: hsl(0, 0%, 50%);
@@ -8,6 +9,7 @@
 }
 
 html.light {
+    --color-bg-secondary: rgb(223, 222, 221);
     --color-bg: hsl(0, 0%, 100%);
     --color-card-bg: hsl(0, 0%, 72%);
     --color-txt-secondary: hsl(0, 0%, 25%);

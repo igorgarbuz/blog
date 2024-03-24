@@ -1,6 +1,13 @@
 import { SITE } from "@config"
 import { z, defineCollection } from "astro:content"
 
+/**
+ * Besides following frontmatter .md file should have
+ * a "Table of contents" h2 (i.e ## in md) title
+ * that will be replaced by a collapsible auto-generated table of contents.
+ * WARNING: Any text not preceding by a title following
+ * the "Table of contents" h2 title will be removed. It is the default remarkToc behavior.
+ */
 export const schema = z.object({
     author: z.string().default(SITE.author),
     canonicalUrl: z.string().url().optional(),

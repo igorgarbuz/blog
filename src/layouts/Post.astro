@@ -91,6 +91,30 @@ const { Content } = await post.render()
         opacity: 1;
         visibility: visible;
     }
+
+    /* Hide table of contents title */
+    h2[id="table-of-contents"] {
+        display: none;
+    }
+
+    summary {
+        cursor: pointer;
+    }
+
+    details {
+        background-color: var(--color-bg-secondary);
+        border-radius: var(--rounded-5);
+        padding: var(--spacing-16);
+    }
+
+    details a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: var(--font-16);
+    }
+    details a:hover {
+        text-decoration: underline;
+    }
 </style>
 
 <script>

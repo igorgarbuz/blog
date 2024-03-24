@@ -13,11 +13,11 @@ Here is a sample of some basic Markdown syntax that can be used when writing Mar
 
 ## Table of contents
 
+## Introduction
+
+The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest. The `<h1>` element is used to represent the main heading of a page, and the `<h2>`—`<h6>` elements are used to represent subheadings. Thus `<h1>` is absent in the .md file.
+
 ## Paragraph h2
-
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
-
-# H1 - Page title
 
 Here is text under H1 content. Usually H1 title is not used inside the article. Is is only used by the template to generate the page title.
 

@@ -4,8 +4,10 @@ My writing space I starting from a need to own my writing as not existing soluti
 
 ## Features wishlist
 
--   [ ] Automatic Table for contents
+-   [ ] Better colors and in oklch space
+-   [ ] Better md footnotes styling
 -   [ ] Citations management using BibTeX
+-   [ ] Estimated reading time (do I really need this?)
 -   [ ] Good SEO
 -   [ ] Good lighthouse scores
 -   [ ] Google Analytics
@@ -13,13 +15,13 @@ My writing space I starting from a need to own my writing as not existing soluti
 -   [ ] Inline code proper styling
 -   [ ] Latex support
 -   [ ] Post images in folders at md file level, still optimized for web
--   [ ] Proper md footnotes styling
+-   [ ] Posts tags management (may need when many posts on different topics)
 -   [ ] RSS
 -   [ ] Robots.txt
 -   [ ] Scroll-to-top button
 -   [ ] Search
 -   [ ] Sitemap
--   [ ] Tags management
 -   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge
+-   [x] Automatic Table for contents
 -   [x] Code syntax highlighting
 -   [x] Light/Dark mode switch without flickering on page load
