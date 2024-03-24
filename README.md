@@ -1,54 +1,25 @@
-# Astro Starter Kit: Basics
+# Simple Astro blog project for technical and scientific writing
 
-```sh
-npm create astro@latest -- --template basics
-```
+My writing space I starting from a need to own my writing as not existing solution seemed to find something I was looking for. Main requirements were: SSG, markdown support, extendable with Remark/Rehype plugins, lightweight for fast loading and easy to deploy. I also wanted to have a default dark mode, proper code syntax highlighting.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Features wishlist
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+-   [ ] Automatic Table for contents
+-   [ ] Citations management using BibTeX
+-   [ ] Good SEO
+-   [ ] Good lighthouse scores
+-   [ ] Google Analytics
+-   [ ] Images properly wrapped into `<figure>` with child `<figcaption>`
+-   [ ] Inline code proper styling
+-   [ ] Latex support
+-   [ ] Post images in folders at md file level, still optimized for web
+-   [ ] Proper md footnotes styling
+-   [ ] RSS
+-   [ ] Robots.txt
+-   [ ] Scroll-to-top button
+-   [ ] Search
+-   [ ] Sitemap
+-   [ ] Tags management
+-   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge
+-   [x] Code syntax highlighting
+-   [x] Light/Dark mode switch without flickering on page load

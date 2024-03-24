@@ -42,6 +42,11 @@ const props = Astro.props
 </style>
 
 <script is:inline>
+    /**
+     * Theme switcher script must have is:inline prop is needed to avoid
+     * flickering of theme colors on page refresh. is:inline prop will exclude script
+     * from the main JS bundle and will load and run it in advance of the page paint.
+     */
     const theme = (() => {
         // Check if user already set a theme
         const localStorageTheme = localStorage.getItem("theme")
@@ -63,6 +68,7 @@ const props = Astro.props
     }
     window.localStorage.setItem("theme", theme)
 </script>
+
 <script>
     document.addEventListener("astro:page-load", () => {
         const handleToggleClick = () => {

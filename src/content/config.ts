@@ -1,26 +1,20 @@
 import { SITE } from "@config"
-import { z, defineCollection, type ImageFunction } from "astro:content"
+import { z, defineCollection } from "astro:content"
 
-export const postsSchema = ({ image }: { image: ImageFunction }) =>
-    z.object({
-        author: z.string().default(SITE.author),
-        canonicalUrl: z.string().url().optional(),
-        dateModified: z.date().optional().nullable(),
-        datePublished: z.date(),
-        description: z.string(),
-        isDraft: z.boolean(),
-        ogImage: image()
-            .refine(image => image.width >= 1200 && image.height >= 630, {
-                message: "Open Graph images must be at least 1200x630 pixels",
-            })
-            .or(z.string())
-            .optional(),
-        tags: z.array(z.string()),
-        title: z.string(),
-    })
+export const schema = z.object({
+    author: z.string().default(SITE.author),
+    canonicalUrl: z.string().url().optional(),
+    dateModified: z.date().optional().nullable(),
+    datePublished: z.date(),
+    description: z.string(),
+    isDraft: z.boolean(),
+    ogImage: z.string().optional(), // og image must have a minimal size of 1200 x 630 c.f https://developers.facebook.com/docs/sharing/webmasters/images/
+    tags: z.array(z.string()),
+    title: z.string(),
+})
 
 const postsCollection = defineCollection({
-    schema: postsSchema,
+    schema,
     type: "content",
 })
 

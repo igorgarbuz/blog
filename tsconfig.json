@@ -2,12 +2,15 @@
     "extends": "astro/tsconfigs/strict",
     "compilerOptions": {
         "allowJs": true,
+        "baseUrl": "src",
         "checkJs": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
-        "resolveJsonModule": true,
-        "baseUrl": "src",
         "jsx": "react-jsx",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "resolveJsonModule": true,
+        "strict": true,
         "strictNullChecks": true,
         "paths": {
             "@assets/*": [

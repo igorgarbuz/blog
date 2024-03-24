@@ -1,16 +1,10 @@
-/* TODO: remove all unused variables here */
 :root{
-    /* Font */
-	--font-sans: 'Poppins', sans-serif;
-	--font-mono: 'JetBrains Mono', monospace;
-	--font-dyslexic: 'OpenDyslexic', sans-serif;
-	--font-dyslexic-mono: 'OpenDyslexic Mono', monospace;
-
     /* Font sizes */
     --font-10: 1rem;
     --font-12: 1.2rem;
     --font-14: 1.4rem;
     --font-16: 1.6rem;
+    --font-18: 1.8rem;
     --font-24: 2.4rem;
     --font-32: 3.2rem;
     --font-48: 4.8rem;
@@ -50,11 +44,10 @@
     /* Border radius */
 	--rounded-4: 4px;
 	--rounded-20: 20px;
-
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* makes 1rem = 10px, for font-size to be 16px will need to set it to 1.6rem */
     scroll-padding-top: var(--spacing-64);
 	scroll-behavior: smooth;
 	scrollbar-width: thin;
@@ -64,65 +57,51 @@ html {
 html,
 body {
 	height: 100%;
-    /* margin: 0 var(--spacing-8); */
-    margin: 0 var(--spacing-8);
 }
 
 body {
-    font-family: var(--font-sans);
-    font-size: var(--font-16);
-    color: var(--color-txt);
     background-color: var(--color-bg);
+    color: var(--color-txt);
+    display: grid;
+    font-family: "SF Pro Display", -apple-system, system-ui, "system-ui", "Inter", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "open sans", "Helvetica", "Helvetica Neue", "sans-serif";
+    font-size: var(--font-18);
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    margin: 0 auto;
+    max-inline-size: 1080px;
 }
 
-html[data-font='dyslexic'] body,
-html[data-font='dyslexic'] h1,
-html[data-font='dyslexic'] h2,
-html[data-font='dyslexic'] h3 {
-	font-family: var(--font-dyslexic);
+main {
+    width: 76.8rem;
+    max-width: calc(100% - 2em);
+    margin: 0 auto;
+    padding: 0 var(--spacing-16);
 }
 
-html[data-font='dyslexic'] h1 {
-	font-size: clamp(var(--font-24), 4vw, var(--font-32));
-	line-height: clamp(32px, 6vw, 48px);
-}
-
-html[data-font='dyslexic'] h2 {
-	font-size: var(--font-24);
-	line-height: 32px;
+article {
+    max-width: 76.8rem;
+    width: 100%;
 }
 
 h1,
 h2,
-h3 {
-	text-wrap: balance;
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 var(--spacing-4) 0;
+	color: var(--color-txt);
+	line-height: 1.2;
 }
 
-h1,
-h2 {
-	font-family: var(--font-sans);
-	text-transform: capitalize;
+strong,
+b {
+	font-weight: 700;
 }
 
-h1 {
-	font-size: clamp(var(--font-32), 4vw, var(--font-48));
-	line-height: clamp(32px, 6vw, 48px);
-}
-
-h2 {
-	font-size: clamp(var(--font-24), 4vw, var(--font-32));
-	line-height: clamp(32px, 6vw, 48px);
-}
-
-h3 {
-	font-size: var(--font-24);
-	line-height: 32px;
-}
-
-/*TODO: try switching from line-height in px to --font-lineheight-1: 1.25; */
-p {
-	line-height: 32px;
-}
+/* p {
+	margin-bottom: var(--spacing-8);
+} */
 
 a {
     position: relative;
@@ -131,53 +110,76 @@ a {
 }
 
 a:hover {
-	color: var(--color-link-hover);
+	color: var(--color-txt-secondary);
 }
 
 table {
-	margin-bottom: var(--spacing-32);
-	border-collapse: collapse;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-16);
+    table-layout: auto;
+    width: 100%;
 }
 
 th,
 td {
-	padding: var(--spacing-16);
-	text-align: left;
-	border: 1px solid var(--color-txt-secondary);
+    border: 1px solid var(--color-txt-secondary);
+    padding: var(--spacing-8);
+    text-align: left;
+}
+
+video,
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--spacing-4);
+}
+
+code {
+	padding: 2px 5px;
+	background-color: rgb(var(--gray-light));
+	border-radius: 2px;
+}
+
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+
+pre > code {
+	all: unset;
+}
+
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0px;
+	font-size: 1.333em;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid rgb(var(--gray-light));
+}
+
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+
+pre > code {
+	all: unset;
+}
+
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0px;
+	font-size: 1.333em;
 }
 
 hr {
     background-color: var(--color-txt-secondary);
-    border-radius: 2px;
+    border-radius: 5px;
     border: none;
     height: var(--spacing-1);
-    margin: var(--spacing-8) 0;
-}
-
-img,
-iframe,
-lite-youtube {
-	border-radius: var(--rounded-4);
-}
-
-lite-youtube {
-	box-shadow: var(--shadow-lg);
-	margin-inline: auto;
-}
-
-lite-youtube::before {
-	background: none;
-}
-
-/* screen-reader for accessibility */
-.sr-only {
-	border-width: 0;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
 }

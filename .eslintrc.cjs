@@ -4,13 +4,13 @@ module.exports = {
         es2022: true,
         node: true,
     },
-    parser: '@typescript-eslint/parser',
-    ignorePatterns: ['*.cjs'],
+    parser: "@typescript-eslint/parser",
+    ignorePatterns: ["*.cjs"],
     extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:astro/recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
     ],
     overrides: [
         {
@@ -20,7 +20,10 @@ module.exports = {
                 extraFileExtensions: [".astro"],
                 parser: "@typescript-eslint/parser",
             },
-            rules: {},
+            rules: {
+                "@typescript-eslint/no-unused-vars": ["error"],
+                "sort-keys": ["error", "asc", {"caseSensitive": true, minKeys: 2, "natural": true}],
+            },
         },
     ],
     parserOptions: {
@@ -29,6 +32,7 @@ module.exports = {
     },
     root: true,
     rules: {
-        "sort-keys": ["error", "asc", {"caseSensitive": true, minKeys: 2, "natural": true}]
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "sort-keys": ["error", "asc", {"caseSensitive": true, minKeys: 2, "natural": true}],
     },
 };

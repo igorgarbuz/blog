@@ -2,13 +2,11 @@ import type { Site, SocialObject } from "./types"
 
 export const SITE: Site = {
     author: "Igor Garbuz",
-    description: "Sharing my building experiences and learning notes.",
-    lightAndDarkMode: true,
-    ogImage: "down-of-man-og.webp",
+    description: "Sharing my experiences and learning notes.",
+    ogImage: "/assets/down-of-man-og.webp",
     postsPerPage: 20,
-    scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
     title: "iglog",
-    url: "https://iglog.me/", // replace this with your deployed domain
+    url: "https://iglog.me/",
 }
 
 export const LOCALE = {

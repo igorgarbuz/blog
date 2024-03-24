@@ -1,0 +1,317 @@
+---
+author: Igor Garbuz
+datePublished: 2024-03-23
+dateModified: 2024-03-23
+title: Debug post
+isDraft: false
+tags:
+    - debug
+description: Represent general structure and possible types of content
+---
+
+Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+
+## Table of contents
+
+## Paragraph h2
+
+The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+
+# H1 - Page title
+
+Here is text under H1 content. Usually H1 title is not used inside the article. Is is only used by the template to generate the page title.
+
+## H2 - Main section inside the article
+
+Chameleons are also distinguished by their zygodactylous feet, their prehensile tail, their laterally compressed bodies, their head casques, their projectile tongues used for catching prey, their swaying gait, and in some species crests or horns on their brow and snout. Chameleons' eyes are independently mobile, and because of this the chameleon’s brain is constantly analyzing two separate, individual images of its environment. When hunting prey, the eyes focus forward in coordination, affording the animal stereoscopic vision.
+
+### H3 - Some sub-section of H2
+
+Some sub-section of the previous title.
+Some chameleon species are able to change their skin coloration. Different chameleon species are able to vary their colouration and pattern through combinations of pink, blue, red, orange, green, black, brown, light blue, yellow, turquoise, and purple.
+
+#### H4 - just for ilustration, usually should not go that deep
+
+Some species, such as Smith's dwarf chameleon and several others in the genus Bradypodion, adjust their colours for camouflage depending on the vision of the specific predator species (for example, bird or snake) by which they are being threatened.
+
+##### H5 - just for ilustration, usually should not go that deep
+
+Chameleons have two superimposed layers within their skin that control their colour and thermoregulation.
+
+###### H6 - just for ilustration, usually should not go that deep
+
+The skin of a chameleon also contains some yellow pigments, which combined with the blue reflected by a relaxed crystal lattice results in the characteristic green colour which is common of many chameleons in their relaxed state.
+
+## Images
+
+#### Syntax
+
+```markdown
+![Alt text](./full/or/relative/path/of/image)
+```
+
+Here are some examples of how to include images in the content with image caption.
+![Nice space image. ^1](https://image.lexica.art/full_webp/140407a6-5252-4774-a1ff-8ee2cf7daf92)
+
+<figcaption>Nice space image. Source: <a href="https://lexica.art/prompt/50a3e4dd-740e-4c00-bb36-a7feff540157" target="_blank">lexica.art. Prompt: "Create an image of a man wandering through space in a spaceship"</a></figcaption>
+
+Note that even though caption looks ok below the image, it is not yet semantically correct HTML because image with its caption is not wrapped in `<figure>` tag. This can be achieved by creating a rehype plugin that will create the wrapper around image and its caption.
+
+Here is another image with caption and citation included using pure HTML.
+
+<figure>
+    <img src="https://image.lexica.art/full_webp/1b6db6eb-9d3a-4469-8b7c-0a4149048ce5" alt="Illustration of a colony on another planet">
+    <figcaption>Colony on another planet. Source: <a href="https://lexica.art/prompt/69be5d50-55a2-4671-abe0-ce34e6a310a8">lexica.art. Prompt: "Beautiful award winning 1950s simple flat 3d art editorial infographics of a moon base..."</a></figcaption>
+</figure>
+
+## Blockquotes
+
+The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+
+### Blockquote without attribution
+
+#### Syntax
+
+```markdown
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+> **Note** that you can use _Markdown syntax_ within a blockquote.
+```
+
+#### Output
+
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+> **Note** that you can use _Markdown syntax_ within a blockquote.
+
+## Footnotes
+
+Here is a sentence with a footnote[^r].
+
+[^r]: Lexical.ai with prompt: "Beautiful award winning 1950s simple flat 3D art editorial infographics of a moon base, stunning lighting, perfect focus, neutral white background, epic angle, epic composition, hyper maximalist". Source: [Beautiful award winning 1950s simple flat 3d art editorial infographics](https://lexica.art/prompt/69be5d50-55a2-4671-abe0-ce34e6a310a8)
+
+### Blockquote with footnotes
+
+#### Syntax
+
+```markdown
+> Don't communicate by sharing memory, share memory by communicating.<br>
+> — <cite>Rob Pike[^1]</cite>
+```
+
+#### Output
+
+> Don't communicate by sharing memory, share memory by communicating.<br>
+> — <cite>Rob Pike[^1]</cite>
+
+[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+
+## Tables
+
+#### Syntax
+
+```markdown
+| Italics   | Bold     | Code   |
+| --------- | -------- | ------ |
+| _italics_ | **bold** | `code` |
+```
+
+#### Output
+
+| Italics   | Bold     | Code   |
+| --------- | -------- | ------ |
+| _italics_ | **bold** | `code` |
+
+## Code Blocks
+
+#### Syntax
+
+we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntac, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
+
+````markdown
+```html
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Example HTML5 Document</title>
+    </head>
+    <body>
+        <p>Test</p>
+    </body>
+</html>
+```
+````
+
+Output
+
+```html
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Example HTML5 Document</title>
+    </head>
+    <body>
+        <p>Test</p>
+    </body>
+</html>
+```
+
+#### Some more examples of different languages
+
+```bash
+git clone https://github.com/pytorch/pytorch.git
+```
+
+```ts
+export default defineConfig({
+    integrations: [sitemap()],
+    output: "static",
+    scopedStyleStrategy: "where",
+    site: SITE.url,
+})
+```
+
+```js
+function sayHelloInFiveSeconds(name) {
+    var prompt = "Hello, " + name + "!"
+    // Inner functions are put in the local scope by default, as if they were
+    // declared with `var`.
+    function inner() {
+        alert(prompt)
+    }
+    setTimeout(inner, 5000)
+    // setTimeout is asynchronous, so the sayHelloInFiveSeconds function will
+    // exit immediately, and setTimeout will call inner afterwards. However,
+    // because inner is "closed over" sayHelloInFiveSeconds, inner still has
+    // access to the `prompt` variable when it is finally called.
+}
+```
+
+```js
+// file: src/config.ts
+export const SOCIALS: SocialObjects = [
+    {
+        name: "Github",
+        href: "https://github.com/satnaing/astro-paper",
+        linkTitle: ` ${SITE.title} on Github`,
+        active: true,
+    },
+    {
+        name: "Facebook",
+        href: "https://github.com/satnaing/astro-paper",
+        linkTitle: `${SITE.title} on Facebook`,
+        active: true,
+    },
+    {
+        name: "Instagram",
+        href: "https://github.com/satnaing/astro-paper",
+        linkTitle: `${SITE.title} on Instagram`,
+        active: false,
+    },
+    ...
+]
+```
+
+## List Types
+
+### Ordered List
+
+#### Syntax
+
+```markdown
+1. First item
+2. Second item
+3. Third item
+```
+
+#### Output
+
+1. First item
+2. Second item
+3. Third item
+
+### Unordered List
+
+#### Syntax
+
+```markdown
+-   List item
+-   Another item
+-   And another item
+```
+
+#### Output
+
+-   List item
+-   Another item
+-   And another item
+
+### Nested list
+
+#### Syntax
+
+```markdown
+-   Fruit
+    -   Apple
+    -   Orange
+    -   Banana
+-   Dairy
+    -   Milk
+    -   Cheese
+```
+
+#### Output
+
+-   Fruit
+    -   Apple
+    -   Orange
+    -   Banana
+-   Dairy
+    -   Milk
+    -   Cheese
+
+## Other Elements — abbr, sub, sup, kbd, mark
+
+#### Syntax
+
+```markdown
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+
+H<sub>2</sub>O
+
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+
+Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
+
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+```
+
+#### Output
+
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+
+H<sub>2</sub>O
+
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+
+Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
+
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+## Latex
+
+$$
+
+f(x) = x^2
+
+
+$$
+
+Another latex formula:
+
+$$
+
+E = mc^2
+
+
+$$

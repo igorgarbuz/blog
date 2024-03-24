@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content"
-import Layout from "@layouts/Layout.astro"
-import Header from "@components/Header.astro"
-import Footer from "@components/Footer.astro"
+import Base from "@layouts/Base.astro"
 // import Card from "@components/Card"
 import getSortedPosts from "@utils/getSortedPosts"
 
@@ -11,29 +9,23 @@ const posts = await getCollection("posts")
 const sortedPosts = getSortedPosts(posts)
 ---
 
-<Layout>
-    <Header />
-    <main>
-        <section>
-            <h1>My writings:</h1>
-            <p>Hi, I'm Igor and this is my writing space. I write mainly about ML and Web tech.</p>
-        </section>
-        {
-            sortedPosts.length > 0 && (
-                <section id="all-posts">
-                    <h2>Recent Posts</h2>
-                    <ul>
-                        {sortedPosts.map(({ data, slug }) => (
-                            <li>
-                                <a href={`/posts/${slug}`}>{data.title}</a>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
-            )
-        }
-    </main>
-    <Footer />
-</Layout>
-
-<style></style>
+<Base>
+    <section>
+        <h1>My writings:</h1>
+        <p>Hi, I'm Igor and this is my writing space. I write mainly about ML and Web tech.</p>
+    </section>
+    {
+        sortedPosts.length > 0 && (
+            <section id="all-posts">
+                <h2>Recent Posts</h2>
+                <ul>
+                    {sortedPosts.map(({ data, slug }) => (
+                        <li>
+                            <a href={`/posts/${slug}`}>{data.title}</a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        )
+    }
+</Base>

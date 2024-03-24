@@ -1,0 +1,55 @@
+---
+import "@styles/themes.css"
+import "@styles/global.css"
+import type { CollectionEntry } from "astro:content"
+import { SITE, LOCALE } from "@config"
+import { ViewTransitions } from "astro:transitions"
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+import BaseHead from "@components/BaseHead.astro"
+
+// Make all props optional any page which is not a post and does not have all the frontmatter
+type Props = Partial<CollectionEntry<"posts">["data"]>
+
+const {
+    author = SITE.title,
+    canonicalUrl = new URL(Astro.url.pathname, Astro.site).href,
+    dateModified,
+    datePublished,
+    description = SITE.description,
+    ogImage = SITE.ogImage,
+    title = SITE.title,
+} = Astro.props
+---
+
+<!doctype html>
+<html lang=`${LOCALE.lang ?? "en"}`>
+    <head>
+        <BaseHead
+            author={author}
+            canonicalUrl={canonicalUrl}
+            dateModified={dateModified}
+            datePublished={datePublished}
+            description={description}
+            ogImage={ogImage}
+            title={title}
+        />
+
+        <ViewTransitions />
+    </head>
+    <body>
+        <Header />
+        {
+            /* Current layout assumes everything is centered
+        and has the same width defined in the <main> tag (c.f global.css). If needed to have
+        a more complex design where the banner (i.e hero image) is wider than the main textual content,
+        it is recommended to define the text content width in a new class (e.g .prose)
+        and increase the width for <main> up to the hero image width.
+        */
+        }
+        <main>
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>
