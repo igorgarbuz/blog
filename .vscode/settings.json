@@ -8,6 +8,13 @@
     "[astro]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "astro", // Enable .astro
+        "typescript", // Enable .ts
+        "typescriptreact" // Enable .tsx
+    ],
     "prettier.tabWidth": 4,
     "editor.formatOnSave": true,
     "eslint.codeActionsOnSave.rules": null,
@@ -22,4 +29,9 @@
         "iglog",
         "youtube"
     ],
+    "stylelint.validate": [
+        "astro",
+        "css",
+        "html",
+    ]
 }

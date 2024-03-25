@@ -4,18 +4,21 @@ My writing space I starting from a need to own my writing as not existing soluti
 
 ## Features wishlist
 
--   [ ] Better colors and in oklch space
+-   [ ] Better colors. Consider oklch colors if any saturated value. For current dark low-chroma colors rgb should be ok.
 -   [ ] Better md footnotes styling
 -   [ ] Citations management using BibTeX
 -   [ ] Estimated reading time (do I really need this?)
+-   [ ] Fix: remark-toc should not remove a paragraph following the "Table of contents" without its own title
 -   [ ] Good SEO
 -   [ ] Good lighthouse scores
 -   [ ] Google Analytics
 -   [ ] Images properly wrapped into `<figure>` with child `<figcaption>`
--   [ ] Inline code proper styling
--   [ ] Latex support
+-   [-] Inline code proper styling
+-   [--] Latex support
+-   [ ] `blockquote` better styling
 -   [ ] Post images in folders at md file level, still optimized for web
 -   [ ] Posts tags management (may need when many posts on different topics)
+-   [ ] Remove unused CSS variables
 -   [ ] RSS
 -   [ ] Robots.txt
 -   [ ] Scroll-to-top button

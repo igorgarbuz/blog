@@ -4,14 +4,12 @@ module.exports = {
         es2022: true,
         node: true,
     },
-    parser: "@typescript-eslint/parser",
-    ignorePatterns: ["*.cjs"],
     extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:astro/recommended",
-        "plugin:prettier/recommended",
     ],
+    ignorePatterns: [],
     overrides: [
         {
             files: ["*.astro"],
@@ -20,19 +18,18 @@ module.exports = {
                 extraFileExtensions: [".astro"],
                 parser: "@typescript-eslint/parser",
             },
-            rules: {
-                "@typescript-eslint/no-unused-vars": ["error"],
-                "sort-keys": ["error", "asc", {"caseSensitive": true, minKeys: 2, "natural": true}],
-            },
         },
     ],
+    parser: "@typescript-eslint/parser",
     parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
         ecmaVersion: "latest",
         sourceType: "module",
     },
     root: true,
     rules: {
-        "@typescript-eslint/no-unused-vars": ["error"],
-        "sort-keys": ["error", "asc", {"caseSensitive": true, minKeys: 2, "natural": true}],
+        "sort-keys": ["error", "asc", { caseSensitive: true, minKeys: 2, natural: true }],
     },
-};
+}

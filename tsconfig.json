@@ -9,9 +9,6 @@
         "jsx": "react-jsx",
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "resolveJsonModule": true,
-        "strict": true,
-        "strictNullChecks": true,
         "paths": {
             "@assets/*": [
                 "assets/*"
@@ -41,5 +38,8 @@
                 "utils/*"
             ],
         },
+        "resolveJsonModule": true,
+        "strict": true,
+        "strictNullChecks": true,
     },
 }

@@ -1,18 +1,20 @@
 /* Dark is default */
 :root {
-    --color-bg-secondary: rgb(32, 33, 34);
-    --color-bg: hsl(0, 0%, 7%);
-    --color-card-bg: hsl(0, 0%, 25%);
-    --color-txt-secondary: hsl(0, 0%, 50%);
-    --color-txt: hsl(0, 0%, 100%);
+    --color-bg-secondary: rgb(32 33 34);
+    --color-bg: hsl(0deg 0% 7%);
+    --color-card-bg: hsl(0deg 0% 25%);
+    --color-txt-secondary: hsl(0deg 0% 50%);
+    --color-txt: hsl(0deg 0% 100%);
+
     -webkit-font-smoothing: antialiased;
 }
 
 html.light {
-    --color-bg-secondary: rgb(223, 222, 221);
-    --color-bg: hsl(0, 0%, 100%);
-    --color-card-bg: hsl(0, 0%, 72%);
-    --color-txt-secondary: hsl(0, 0%, 25%);
-    --color-txt: hsl(0, 0%, 0%);
+    --color-bg-secondary: rgb(223 222 221);
+    --color-bg: hsl(0deg 0% 100%);
+    --color-card-bg: hsl(0deg 0% 72%);
+    --color-txt-secondary: hsl(0deg 0% 25%);
+    --color-txt: hsl(0deg 0% 0%);
+
     -webkit-font-smoothing: auto;
 }

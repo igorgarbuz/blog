@@ -15,6 +15,7 @@ Here is a sample of some basic Markdown syntax that can be used when writing Mar
 
 ## Introduction
 
+WARNING: Paragraph following the "Table of contents" without its own title will be removed by remark-toc. Here "Introduction" is added to prevent this.
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest. The `<h1>` element is used to represent the main heading of a page, and the `<h2>`—`<h6>` elements are used to represent subheadings. Thus `<h1>` is absent in the .md file.
 
 ## Paragraph h2

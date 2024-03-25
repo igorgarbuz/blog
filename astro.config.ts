@@ -20,7 +20,6 @@ export default defineConfig({
             [remarkToc, { heading: CONTENTS_PATTERN }],
             [remarkCollapse, { summary: (toc: string) => toc, test: CONTENTS_PATTERN }],
         ],
-
         shikiConfig: {
             theme: "dark-plus", // used for dark and light themes
             wrap: true,

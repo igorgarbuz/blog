@@ -77,21 +77,25 @@ const { activeNav } = Astro.props
     }
 
     /* Mobile first-class citizen, below styles for the desktop */
-    @media (min-width: 860px) {
+    @media (width >= 860px) {
         .nav-container {
             align-items: center;
         }
+
         #nav-links {
             flex-direction: row;
             margin: 0;
         }
+
         #nav-links-container {
             grid-template-rows: 1fr;
             transition: none;
         }
+
         .menu-button-element {
             display: none;
         }
+
         li {
             padding: 0 var(--spacing-16);
         }
