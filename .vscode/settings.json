@@ -33,5 +33,16 @@
         "astro",
         "css",
         "html",
-    ]
+    ],
+    "eslint.probe": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "html",
+        "vue",
+        "markdown",
+        "astro"
+    ],
+    "eslint.experimental.useFlatConfig": true,
 }

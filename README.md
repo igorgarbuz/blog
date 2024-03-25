@@ -21,6 +21,7 @@ My writing space I starting from a need to own my writing as not existing soluti
 -   [ ] Remove unused CSS variables
 -   [ ] RSS
 -   [ ] Robots.txt
+-   [ ] Add eslint [accessibility check](https://ota-meshi.github.io/eslint-plugin-astro/user-guide/) `eslint-plugin-jsx-a11y`
 -   [ ] Scroll-to-top button
 -   [ ] Search
 -   [ ] Sitemap

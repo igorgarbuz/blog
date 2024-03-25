@@ -20,15 +20,16 @@
     },
     "devDependencies": {
         "@astrojs/check": "^0.5.10",
-        "@typescript-eslint/eslint-plugin": "^7.3.1",
-        "@typescript-eslint/parser": "^7.3.1",
+        "@eslint/js": "^8.57.0",
         "eslint": "^8.57.0",
         "eslint-plugin-astro": "^0.32.0",
         "prettier": "^3.2.5",
+        "@typescript-eslint/parser": "^7.3.1",
         "prettier-plugin-astro": "^0.13.0",
         "stylelint": "^16.3.0",
         "stylelint-config-html": "^1.1.0",
         "stylelint-config-standard": "^36.0.0",
-        "typescript": "^5.4.2"
+        "typescript": "^5.4.2",
+        "typescript-eslint": "^7.3.1"
     }
 }
