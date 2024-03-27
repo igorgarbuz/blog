@@ -8,8 +8,8 @@
         "build": "astro check && astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "lint": "stylelint '**/*.{astro,css}' && prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,astro}' && eslint 'src/**/*.{js,ts,jsx,tsx,astro}'",
-        "lint:fix": "stylelint '**/*.{astro,css}' --fix && prettier --write '**/*.{js,jsx,ts,tsx,md,mdx,astro}' && eslint --fix 'src/**/*.{js,ts,jsx,tsx,astro}'"
+        "lint": "stylelint '**/*.{astro,css}' && prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,astro}' && eslint 'src/**/*.{js,cjs,mjs,ts,jsx,tsx,astro}'",
+        "lint:fix": "stylelint '**/*.{astro,css}' --fix && prettier --write '**/*.{js,jsx,ts,tsx,md,mdx,astro}' && eslint --fix 'src/**/*.{js,cjs,mjs,ts,jsx,tsx,astro}'"
     },
     "dependencies": {
         "@astrojs/rss": "^4.0.5",

@@ -9,6 +9,12 @@
             "options": {
                 "parser": "astro"
             }
+        },
+        {
+            "files": "*.{yml,yaml}",
+            "options": {
+                "tabWidth": 2
+            }
         }
     ],
     "plugins": [
