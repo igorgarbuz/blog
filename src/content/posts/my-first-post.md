@@ -2,7 +2,7 @@
 author: Igor Garbuz
 datePublished: 2024-01-04
 description: "My first post"
-ogImage: ../../assets/first-post-og.png
+ogImage: ../../assets/down-of-man-og.png
 slug: "my-first-post"
 isDraft: false
 title: My first post

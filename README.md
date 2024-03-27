@@ -7,6 +7,7 @@ My writing space I starting from a need to own my writing as not existing soluti
 -   [!] Latex support
 -   [!] H1 H2 H3 H4 H5 H6 proper styling
 -   [ ] Add git pre-push hooks for linting / testing
+-   [ ] Reduce quantity of client-side JS by moving some pre-processing to html with rehype plugins
 -   [ ] Better colors. Consider oklch colors if any saturated value. For current dark low-chroma colors rgb should be ok.
 -   [ ] Better md footnotes styling
 -   [ ] Citations management using BibTeX
