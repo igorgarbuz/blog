@@ -52,10 +52,11 @@ The skin of a chameleon also contains some yellow pigments, which combined with 
 ```
 
 Here are some examples of how to include images in the content with image caption.
-![Nice space image. ^1](https://image.lexica.art/full_webp/140407a6-5252-4774-a1ff-8ee2cf7daf92)
+![Nice space image.](https://image.lexica.art/full_webp/140407a6-5252-4774-a1ff-8ee2cf7daf92)
 
 <figcaption>Nice space image. Source: <a href="https://lexica.art/prompt/50a3e4dd-740e-4c00-bb36-a7feff540157" target="_blank">lexica.art. Prompt: "Create an image of a man wandering through space in a spaceship"</a></figcaption>
 
+Testing links in the text, image source is [here](https://lexica.art/prompt/50a3e4dd-740e-4c00-bb36-a7feff540157).
 Note that even though caption looks ok below the image, it is not yet semantically correct HTML because image with its caption is not wrapped in `<figure>` tag. This can be achieved by creating a rehype plugin that will create the wrapper around image and its caption.
 
 Here is another image with caption and citation included using pure HTML.

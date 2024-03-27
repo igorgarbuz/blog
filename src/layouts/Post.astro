@@ -57,11 +57,11 @@ const { Content } = await post.render()
 
 <style is:global>
     /* converted to global to make work classes for elements generated with JS */
-    .copy-code {
-        background-color: rgb(255 255 255 0);
+    .copy-code-button {
+        background-color: transparent;
         border-radius: var(--spacing-2);
         border: none;
-        color: var(--color-txt-secondary);
+        color: hsl(0deg 0% 50%); /* Fix color since code block style is not changed */
         cursor: pointer;
         font-size: var(--font-12);
         padding-top: 5px;
@@ -71,8 +71,8 @@ const { Content } = await post.render()
         transition: color 0.2s;
     }
 
-    .copy-code:hover {
-        background-color: rgb(255 255 255 0.1);
+    .copy-code-button:hover {
+        background-color: hsla(0deg 0% 100% / 10%);
     }
 
     .heading-link {
@@ -146,7 +146,7 @@ const { Content } = await post.render()
 
         codeBlocks.forEach(codeBlock => {
             const copyButton = document.createElement("button")
-            copyButton.className = "copy-code"
+            copyButton.className = "copy-code-button"
             copyButton.innerHTML = copyButtonLabel
             codeBlock.setAttribute("tabindex", "0")
             codeBlock.appendChild(copyButton)
@@ -162,7 +162,7 @@ const { Content } = await post.render()
 
             await navigator.clipboard.writeText(text ?? "")
 
-            button.style.color = "#99fa6b"
+            button.style.color = "oklch(85% 0.303 145.06)"
             setTimeout(() => {
                 button.style.color = "var(--color-txt-secondary)"
             }, 2000)

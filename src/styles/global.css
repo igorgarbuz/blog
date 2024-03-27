@@ -69,6 +69,7 @@ body {
     font-size: var(--font-18);
     grid-template-columns: 100%;
     grid-template-rows: auto 1fr auto;
+    line-height: 1.6;
     margin: 0 auto;
     max-inline-size: 1080px;
 }
@@ -101,18 +102,13 @@ b {
 	font-weight: 700;
 }
 
-/* p {
-	margin-bottom: var(--spacing-8);
-} */
-
 a {
     position: relative;
-    color: var(--color-txt);
-    font-weight: 700;
+    color: inherit;
 }
 
 a:hover {
-	color: var(--color-txt-secondary);
+	color: var(--color-txt-hover);
 }
 
 table {
@@ -137,9 +133,9 @@ img {
 }
 
 code {
-	padding: 2px 5px;
 	background-color: var(--color-bg-secondary);
-	border-radius: 2px;
+	border-radius: var(--rounded-4);
+	padding: var(--spacing-2) var(--spacing-4);
 }
 
 pre {
@@ -164,4 +160,14 @@ hr {
     border-radius: 5px;
     border: none;
     height: var(--spacing-1);
+}
+
+/* Text centered under the image with --color-txt-secondary color */
+figcaption {
+    color: var(--color-txt-secondary);
+    text-align: center;
+}
+
+figcaption a:hover {
+    color: var(--color-txt-secondary-hover);
 }
