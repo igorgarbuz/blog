@@ -1,8 +1,8 @@
 ---
 import { SITE } from "@config"
-import SearchIcon from "@components/SearchIcon.astro"
+import SearchButton from "@components/SearchButton.astro"
 import MenuButton from "@components/MenuButton.astro"
-import ThemeSwitch from "@components/ThemeIcon.astro"
+import ThemeSwitch from "@components/ThemeSwitch.astro"
 
 export interface Props {
     activeNav?: "posts" | "tags" | "about" | "search"
@@ -28,9 +28,7 @@ const { activeNav } = Astro.props
                     <a href="/about/" class={activeNav === "about" ? "active" : ""}> About </a>
                 </li>
                 <li>
-                    <a href="/search/" aria-label="search" title="Search">
-                        <SearchIcon style="margin-top: 8px" />
-                    </a>
+                    <SearchButton style="margin-top: 8px" />
                 </li>
                 <li>
                     <ThemeSwitch />
