@@ -22,6 +22,10 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 
 Here is text under H1 content. Usually H1 title is not used inside the article. Is is only used by the template to generate the page title.
 
+Second paragraph. Claude Elwood Shannon (April 30, 1916 – February 24, 2001) was an American mathematician, electrical engineer, computer scientist and cryptographer known as the "father of information theory". He was the first to describe the Boolean gates (electronic circuits) that are essential to all digital electronic circuits, and he built the first machine learning device, thus founding the field of artificial intelligence. He is credited alongside George Boole for laying the foundations of the Information Age.
+
+Third paragraph. Shannon designed the Minivac 601, a digital computer trainer to teach business people about how computers functioned. It was sold by the Scientific Development Corp starting in 1961.
+
 ## H2 - Main section inside the article
 
 Chameleons are also distinguished by their zygodactylous feet, their prehensile tail, their laterally compressed bodies, their head casques, their projectile tongues used for catching prey, their swaying gait, and in some species crests or horns on their brow and snout. Chameleons' eyes are independently mobile, and because of this the chameleon’s brain is constantly analyzing two separate, individual images of its environment. When hunting prey, the eyes focus forward in coordination, affording the animal stereoscopic vision.
@@ -300,7 +304,7 @@ Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the ses
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 
-## Latex
+## Latex using MathJax
 
 $$
 

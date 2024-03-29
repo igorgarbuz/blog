@@ -14,8 +14,10 @@
     "dependencies": {
         "@astrojs/rss": "^4.0.5",
         "@astrojs/sitemap": "^3.1.2",
-        "astro": "^4.5.10",
+        "astro": "^4.5.12",
+        "rehype-mathjax": "^6.0.0",
         "remark-collapse": "^0.1.2",
+        "remark-math": "^6.0.0",
         "remark-toc": "^9.0.0",
         "sharp": "^0.33.3"
     },

@@ -1,8 +1,13 @@
 ---
+// interface Props {
+//     className?: string
+// }
+
+// const { className } = Astro.props
 const props = Astro.props
 ---
 
-<a href="/search/" aria-label="search" title="Search">
+<a href="/search/" aria-label="search" title="Search" {...props}>
     <svg
         fill="none"
         height="1.5em"
@@ -13,8 +18,17 @@ const props = Astro.props
         viewBox="0 0 24 24"
         width="1.5em"
         xmlns="http://www.w3.org/2000/svg"
-        {...props}
     >
         <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path>
     </svg>
 </a>
+
+<style>
+    a:hover {
+        color: inherit;
+    }
+
+    svg {
+        margin-top: var(--spacing-8);
+    }
+</style>

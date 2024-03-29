@@ -28,7 +28,7 @@ const { activeNav } = Astro.props
                     <a href="/about/" class={activeNav === "about" ? "active" : ""}> About </a>
                 </li>
                 <li>
-                    <SearchButton style="margin-top: 8px" />
+                    <SearchButton />
                 </li>
                 <li>
                     <ThemeSwitch />
@@ -47,6 +47,21 @@ const { activeNav } = Astro.props
         justify-content: space-between;
         padding: var(--spacing-24);
         z-index: 1100;
+    }
+
+    #site-title {
+        font-size: var(--font-32);
+    }
+
+    a {
+        display: inline-block;
+        margin: calc(-1 * var(--spacing-8));
+        padding: var(--spacing-8);
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: inherit;
     }
 
     /* needed as parent grid container to enable slide-down animation on mobile */
