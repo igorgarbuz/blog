@@ -3,6 +3,7 @@ author: Igor Garbuz
 datePublished: 2024-03-23
 dateModified: 2024-03-23
 title: Debug post
+ogImage: ../../assets/down-of-man-og.png
 isDraft: false
 tags:
     - debug

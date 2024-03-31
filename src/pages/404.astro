@@ -4,10 +4,32 @@ import Base from "@layouts/Base.astro"
 ---
 
 <Base title={`404 Not Found | ${SITE.title}`}>
-    <div class="not-found-wrapper">
-        <h1 aria-label="404 Not Found">404</h1>
-        <span aria-hidden="true">¯\_(ツ)_/¯</span>
+    <div>
+        <pre
+            aria-hidden="true">
+ ___   ___  ________  ___   ___
+|\  \ |\  \|\   __  \|\  \ |\  \
+\ \  \\_\  \ \  \|\  \ \  \\_\  \
+ \ \______  \ \  \\\  \ \______  \
+  \|_____|\  \ \  \\\  \|_____|\  \
+         \ \__\ \_______\     \ \__\
+          \|__|\|_______|      \|__|
+        </pre>
         <p>Page Not Found</p>
         <a href="/"> Go back home </a>
     </div>
 </Base>
+
+<style>
+    div {
+        margin-top: var(--spacing-64);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    pre {
+        line-height: 1.15;
+        font-size: var(--font-14);
+    }
+</style>

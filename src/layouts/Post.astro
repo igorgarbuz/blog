@@ -2,6 +2,8 @@
 // Nesting layouts can be a good practice, like described in https://docs.astro.build/en/tutorial/4-layouts/3/
 import Base from "./Base.astro"
 import type { CollectionEntry } from "astro:content"
+import { SITE } from "@config"
+import FormattedDate from "@components/FormattedDate.astro"
 
 interface Props {
     post: CollectionEntry<"posts">
@@ -9,31 +11,24 @@ interface Props {
 
 const { post } = Astro.props
 
-const { data, slug } = post
+const { data } = post
 
 const { author, datePublished, dateModified, ogImage, title } = data
 
-const ogUrl = new URL(ogImage ?? `/posts/${slug}.png`, Astro.url.origin).href
-
-type DateStyle = Intl.DateTimeFormatOptions["dateStyle"]
-
-export function formatDate(date: Date, dateStyle: DateStyle = "medium", locales = "en") {
-    const formatter = new Intl.DateTimeFormat(locales, { dateStyle })
-    return formatter.format(date)
-}
+const ogUrl = new URL(ogImage, Astro.url.origin).href
 
 const { Content } = await post.render()
 ---
 
-<Base {...data} ogImage={ogUrl}>
+<Base {...{ ...data, title: `${title} | ${SITE.title}` }} ogImage={ogUrl}>
     <article>
         <hgroup>
             <h1>{title}</h1>
-            <p>
-                Published: {formatDate(datePublished)}
-                {dateModified ? <span> | Updated: {formatDate(dateModified)}</span> : null}
-                | Author: {author}
-            </p>
+            <FormattedDate
+                datePublished={datePublished}
+                dateModified={dateModified}
+                author={author}
+            />
         </hgroup>
         <div class="prose">
             <Content />
@@ -42,10 +37,8 @@ const { Content } = await post.render()
 </Base>
 
 <style>
-    hgroup p {
-        color: var(--color-txt-secondary);
-        margin-top: 0;
-        font-size: var(--font-14);
+    hgroup {
+        margin-bottom: var(--spacing-16);
     }
 
     .heading-link {
@@ -101,6 +94,7 @@ const { Content } = await post.render()
         cursor: pointer;
     }
 
+    /* <details> is used by remark TOC plugin to wrap table of contents  */
     details {
         background-color: var(--color-bg-secondary);
         border-radius: var(--rounded-5);

@@ -1,11 +1,11 @@
 {
     "name": "blog",
     "type": "module",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "scripts": {
         "dev": "astro dev --port 5012",
         "start": "astro dev",
-        "build": "astro check && astro build",
+        "build": "rm -rf dist && astro check && astro build",
         "preview": "astro preview",
         "astro": "astro",
         "lint": "stylelint '**/*.{astro,css}' && prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,astro}' && eslint '**/*.{js,cjs,mjs,ts,jsx,tsx,astro}'",

@@ -4,7 +4,7 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION
 const { author, canonicalUrl, dateModified, datePublished, description, ogImage, title } =
     Astro.props
 
-const socialImageURL = new URL(ogImage, Astro.url.origin).href
+const openGraphImage = new URL(ogImage, Astro.url.origin).href
 ---
 
 {
@@ -37,7 +37,7 @@ const socialImageURL = new URL(ogImage, Astro.url.origin).href
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalUrl} />
-<meta property="og:image" content={socialImageURL} />
+<meta property="og:image" content={openGraphImage} />
 
 {/* Article Published/Modified time */}
 {datePublished && <meta property="article:published_time" content={datePublished.toISOString()} />}
@@ -48,7 +48,7 @@ const socialImageURL = new URL(ogImage, Astro.url.origin).href
 <meta property="twitter:url" content={canonicalUrl} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={socialImageURL} />
+<meta property="twitter:image" content={openGraphImage} />
 
 {
     // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,

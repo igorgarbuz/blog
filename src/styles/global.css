@@ -38,6 +38,7 @@
     --spacing-64: 6.4rem;
     --spacing-96: 9.6rem;
     --spacing-128: 12.8rem;
+    --spacing-768: 76.8rem;
 
     /* Scrollbar */
 	--color-scrollbar-thumb: hsl(173deg 10% 20%);
@@ -77,22 +78,23 @@ body {
     grid-template-rows: auto 1fr auto;
     line-height: 1.6;
     margin: 0 auto;
-    max-inline-size: 1080px;
+    max-inline-size: var(--spacing-768);
+    overflow-y: scroll; /* prevent layout shift when scrollbar appears */
 }
 
 main {
-    width: 76.8rem;
-    max-width: calc(100% - 2em);
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 0 var(--spacing-16);
-}
-
-article {
-    max-width: 76.8rem;
     width: 100%;
 }
 
-h1,
+h1 {
+    font-size: var(--font-36);
+    margin-bottom: var(--spacing-4);
+    margin-top: var(--spacing-8);
+}
+
 h2,
 h3,
 h4,
@@ -100,10 +102,6 @@ h5,
 h6 {
 	margin: var(--spacing-32) 0 var(--spacing-16);
 	line-height: 1.2;
-}
-
-h1 {
-    font-size: var(--font-36);
 }
 
 h2 {

@@ -1,17 +1,16 @@
 import type { APIRoute } from "astro"
 import { SITE } from "@config"
 
-const robots = `
-User-agent: Googlebot
-Disallow: /nogooglebot/
 
+// TODO: allow when site is ready for indexing
+const robotsTxt = `
 User-agent: *
-Allow: /
+Disallow: /
 
 Sitemap: ${new URL("sitemap-index.xml", SITE.url).href}
 `.trim()
 
 export const GET: APIRoute = () =>
-    new Response(robots, {
-        headers: { "Content-Type": "text/plain" },
+    new Response(robotsTxt, {
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
     })

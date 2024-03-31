@@ -4,7 +4,6 @@ type Site = {
     author: string
     description: string
     ogImage: string
-    postsPerPage: number
     title: string
     url: string
 }

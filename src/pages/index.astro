@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content"
 import Base from "@layouts/Base.astro"
-// import Card from "@components/Card"
-import getSortedPosts from "@utils/getSortedPosts"
+import PostSummaryCard from "@components/PostSummaryCard.astro"
+import { getSortedPosts } from "@utils/posts"
 
 const posts = await getCollection("posts")
 
@@ -10,22 +10,39 @@ const sortedPosts = getSortedPosts(posts)
 ---
 
 <Base>
-    <section>
+    <hgroup>
         <h1>My writings:</h1>
         <p>Hi, I'm Igor and this is my writing space. I write mainly about ML and Web tech.</p>
-    </section>
+    </hgroup>
     {
         sortedPosts.length > 0 && (
-            <section id="all-posts">
-                <h2>Recent Posts</h2>
+            <section>
+                <h2>My articles</h2>
                 <ul>
-                    {sortedPosts.map(({ data, slug }) => (
-                        <li>
-                            <a href={`/posts/${slug}`}>{data.title}</a>
-                        </li>
-                    ))}
+                    {sortedPosts.map(
+                        ({
+                            data: { author, description, datePublished, dateModified, title },
+                            slug,
+                        }) => (
+                            <PostSummaryCard
+                                author={author}
+                                body={description}
+                                dateModified={dateModified}
+                                datePublished={datePublished}
+                                href={`/posts/${slug}`}
+                                title={title}
+                            />
+                        )
+                    )}
                 </ul>
             </section>
         )
     }
 </Base>
+
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+</style>

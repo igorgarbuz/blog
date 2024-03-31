@@ -1,0 +1,25 @@
+---
+/**
+ * Main reason for this component is to add active page styling to the links.
+ */
+import type { HTMLAttributes } from "astro/types"
+
+type Props = HTMLAttributes<"a">
+
+const { href, class: className, ...props } = Astro.props
+
+const { pathname } = Astro.url
+const subpath = pathname.match(/[^/]+/g)
+const isActive = href === pathname || href === "/" + subpath?.[0]
+---
+
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
+    <slot />
+</a>
+
+<style>
+    a.active {
+        text-decoration: underline;
+        text-underline-offset: var(--spacing-4);
+    }
+</style>

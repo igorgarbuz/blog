@@ -1,13 +1,12 @@
 ---
 const props = Astro.props
-const { class: additionalClasses } = props
 ---
 
 <button
-    class={`menu-button ${additionalClasses}`}
-    aria-label="Open Menu"
-    aria-expanded="false"
     aria-controls="nav-links"
+    aria-expanded="false"
+    aria-label="Open Menu"
+    id="menu-button"
     {...props}
 >
     <div class="bar1"></div>
@@ -16,7 +15,7 @@ const { class: additionalClasses } = props
 </button>
 
 <style>
-    .menu-button {
+    #menu-button {
         background: none;
         border: none;
         cursor: pointer;
@@ -29,7 +28,7 @@ const { class: additionalClasses } = props
         width: 26px;
     }
 
-    .menu-button div {
+    div {
         background-color: var(--color-txt);
         border-radius: 5px;
         height: 2px;

@@ -1,5 +1,9 @@
 import type { CollectionEntry } from "astro:content"
-import postFilter from "./postFilter"
+
+const postFilter = ({ data }: CollectionEntry<"posts">) => {
+    const isPublishTimePassed = Date.now() > new Date(data.datePublished).getTime()
+    return !data.isDraft && (import.meta.env.DEV || isPublishTimePassed)
+}
 
 const getSortedPosts = (posts: CollectionEntry<"posts">[]) => {
     return posts
@@ -15,4 +19,4 @@ const getSortedPosts = (posts: CollectionEntry<"posts">[]) => {
         )
 }
 
-export default getSortedPosts
+export { getSortedPosts, postFilter }

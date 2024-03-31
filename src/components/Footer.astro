@@ -5,17 +5,13 @@ const props = Astro.props
 ---
 
 <footer {...props}>
-    <p>{SITE.title} &copy {new Date().getFullYear()}</p>
+    {SITE.title} &copy {new Date().getFullYear()}
 </footer>
 
 <style>
     footer {
-        text-align: center;
-        padding-block: var(--spacing-4);
-    }
-
-    p {
         color: var(--color-txt-secondary);
-        margin: var(--spacing-8) 0;
+        padding-block: var(--spacing-24);
+        text-align: center;
     }
 </style>

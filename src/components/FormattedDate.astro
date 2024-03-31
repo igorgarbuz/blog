@@ -1,0 +1,30 @@
+---
+import { formatDate } from "@utils/date"
+interface Props {
+    datePublished: Date
+    dateModified?: Date | null
+    author: string
+}
+const { datePublished, dateModified, author } = Astro.props
+---
+
+<div>
+    Published: <time>{formatDate(datePublished)}</time>
+    {
+        dateModified ? (
+            <span>
+                {" "}
+                | Updated: <time>{formatDate(dateModified)}</time>
+            </span>
+        ) : null
+    }
+    | Author: {author}
+</div>
+
+<style>
+    div {
+        color: var(--color-txt-secondary);
+        margin-top: 0;
+        font-size: var(--font-14);
+    }
+</style>
