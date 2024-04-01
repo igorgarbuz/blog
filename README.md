@@ -17,8 +17,12 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 
 ## Features wishlist (alpha order, but top priority first)
 
--   [-] Setup auto-deploy on push to main
+-   [-] Fix: on mobile Cards and buttons with hover color stay highlighted after click
 -   [-] Scroll-to-top button
+-   [-] Invert theme icon so it shown intention of the button, not the current state
+-   [-] Select analytics provider, check if it's GDPR compliant + privacy concerns
+-   [-] Test site OG image works
+-   [ ] Add sort posts by datePublished or dateModified
 -   [ ] Add Updates section with a date + changes in an article
 -   [ ] Add auto OpenGraph and Twitter card generation
 -   [ ] Add git pre-push hooks for linting / testing
@@ -32,7 +36,7 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 -   [ ] Estimated reading time (still think if need this?)
 -   [ ] Fix: Images in MD automatically properly wrapped into `<figure>` with child `<figcaption>`. Probably through rehype plugin.
 -   [ ] Fix: remark-toc should not remove a paragraph following the "Table of contents" without its own title
--   [ ] Good accessibility rating
+-   [ ] Perfect accessibility rating
 -   [ ] Great lighthouse scores
 -   [ ] Layout: Decide if the ogImage should be on top of the post. Thus increasing the header width to match the post header width.
 -   [ ] Pagination for when having many posts
@@ -40,14 +44,13 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 -   [ ] Posts tags management (may need when many posts on different topics)
 -   [ ] Remove all hardcoded css values and use css variables
 -   [ ] Remove unused CSS variables
--   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge
+-   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge, on Mobile
 -   [ ] Uniform border-radius and reduce number of vars
 -   [x] Add header link isActive indicator
--   [x] Error page
--   [x] Remove unused pages from header menu
 -   [x] Automatic Table for contents
 -   [x] Better styling of `blockquote`
 -   [x] Code syntax highlighting
+-   [x] Error page
 -   [x] H1 H2 H3 H4 H5 H6 proper styling
 -   [x] Header menu links remove hover and increase clickable area
 -   [x] Inline code proper styling
@@ -55,5 +58,7 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 -   [x] Light/Dark mode switch without flickering on page load
 -   [x] Posts cards in the home page
 -   [x] RSS
+-   [x] Remove unused pages from header menu
 -   [x] Robots.txt
+-   [x] Setup auto-deploy on push to main
 -   [x] Sitemap

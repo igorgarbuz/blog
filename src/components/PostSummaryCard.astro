@@ -58,7 +58,10 @@ const { href, title, body, datePublished, dateModified, author } = Astro.props
         transition: background-color 0.14s ease-in-out;
     }
 
-    li:hover {
-        background-color: var(--color-bg-hover);
+    /* Hover effect except for mobile where it may not be properly handled */
+    @media (hover: hover) {
+        li:hover {
+            background-color: var(--color-bg-hover);
+        }
     }
 </style>

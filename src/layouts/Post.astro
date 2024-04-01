@@ -30,7 +30,7 @@ const { Content } = await post.render()
                 author={author}
             />
         </hgroup>
-        <div class="prose">
+        <div>
             <Content />
         </div>
     </article>
@@ -51,21 +51,29 @@ const { Content } = await post.render()
 <style is:global>
     /* converted to global to make work classes for elements generated with JS */
     .copy-code-button {
+        align-items: center; /* centers vertically */
         background-color: transparent;
         border-radius: var(--spacing-2);
         border: none;
         color: hsl(0deg 0% 50%); /* Fix color since code block theme is not changed */
         cursor: pointer;
+        display: flex;
         font-size: var(--font-12);
-        padding-top: 5px;
+        height: var(--spacing-24);
+        justify-content: center; /* centers horizontally */
+        padding: 3px; /* Center svg inside the hovered area */
         position: absolute;
         right: var(--spacing-8);
         top: var(--spacing-8);
         transition: color 0.2s;
+        width: var(--spacing-24);
     }
 
-    .copy-code-button:hover {
-        background-color: hsla(0deg 0% 100% / 10%);
+    /* Prevent sticky hover state on touch devices */
+    @media (hover: hover) {
+        .copy-code-button:hover {
+            background-color: hsla(0deg 0% 100% / 10%);
+        }
     }
 
     .heading-link {
