@@ -8,7 +8,7 @@ import type { APIRoute } from "astro"
 export const GET: APIRoute = async () => {
     const posts = await getCollection("posts")
     const sortedPosts = getSortedPosts(posts)
-    const items: RSSFeedItem[] = sortedPosts.map(( { data, slug }) => ({
+    const items: RSSFeedItem[] = sortedPosts.map(({ data, slug }) => ({
         description: data.description,
         link: `posts/${slug}/`,
         pubDate: new Date(data.dateModified ?? data.datePublished),

@@ -17,7 +17,6 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 
 ## Features wishlist (alpha order, but top priority first)
 
--   [-] Fix: on mobile Cards and buttons with hover color stay highlighted after click
 -   [-] Scroll-to-top button
 -   [-] Invert theme icon so it shown intention of the button, not the current state
 -   [-] Select analytics provider, check if it's GDPR compliant + privacy concerns
@@ -47,6 +46,7 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 -   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge, on Mobile
 -   [ ] Uniform border-radius and reduce number of vars
 -   [x] Add header link isActive indicator
+-   [x] Fix: on mobile Cards and buttons with hover color stay highlighted after click
 -   [x] Automatic Table for contents
 -   [x] Better styling of `blockquote`
 -   [x] Code syntax highlighting

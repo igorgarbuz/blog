@@ -1,7 +1,6 @@
 import type { APIRoute } from "astro"
 import { SITE } from "@config"
 
-
 // TODO: allow when site is ready for indexing
 const robotsTxt = `
 User-agent: *

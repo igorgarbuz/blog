@@ -9,7 +9,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:astro/recommended",
     ],
-    ignorePatterns: [],
+    ignorePatterns: ["dist/", "node_modules/"],
     overrides: [
         {
             files: ["*.astro"],

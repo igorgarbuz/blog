@@ -48,10 +48,14 @@ const { Content } = await post.render()
     }
 </style>
 
+{
+    /**
+     * Converted to global to make work classes for elements generated with JS
+     */
+}
 <style is:global>
-    /* converted to global to make work classes for elements generated with JS */
     .copy-code-button {
-        align-items: center; /* centers vertically */
+        align-items: center;
         background-color: transparent;
         border-radius: var(--spacing-2);
         border: none;
@@ -60,8 +64,8 @@ const { Content } = await post.render()
         display: flex;
         font-size: var(--font-12);
         height: var(--spacing-24);
-        justify-content: center; /* centers horizontally */
-        padding: 3px; /* Center svg inside the hovered area */
+        justify-content: center;
+        padding: 3px;
         position: absolute;
         right: var(--spacing-8);
         top: var(--spacing-8);
@@ -120,10 +124,23 @@ const { Content } = await post.render()
     }
 </style>
 
+{
+    /**
+     * Following is a sort of "hacking" into shiki styled code block.
+     * It's neither elegant nor efficient, but it works.
+     * There could be a better way to do this and a user of this code is
+     * encouraged to try finding out how to avoid this client JS.
+     *
+     * In iOS navigator.clipboard.writeText is only testable
+     * in production with HTTPS. `navigator.clipboard`` API has
+     * certain restrictions and does not work in development mode.
+     *
+     * Add fragment identifiers to headings c.f https://developer.mozilla.org/en-US/docs/Web/Text_fragments
+     *
+     * Use inline script to avoid bundling and execute faster that prevent flickering on render
+     */
+}
 <script is:inline>
-    /** Use inline script to avoid bundling and execute faster that prevent flickering on render */
-
-    /** Add fragment identifiers to headings c.f https://developer.mozilla.org/en-US/docs/Web/Text_fragments */
     function addHeadingLinks() {
         document.querySelectorAll("h2, h3, h4, h5, h6").forEach(heading => {
             heading.classList.add("heading-with-link")
@@ -137,12 +154,6 @@ const { Content } = await post.render()
     }
     addHeadingLinks()
 
-    /**
-     * Following is a sort of "hacking" into shiki styled code block.
-     * It's neither elegant nor efficient, but it works.
-     * There could be a better way to do this and a user of this code is
-     * encouraged to try finding it out.
-     */
     function attachCopyButtons() {
         const copyButtonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`
         const codeBlocks = document.querySelectorAll("pre:has(code)")

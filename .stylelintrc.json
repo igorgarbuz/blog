@@ -3,6 +3,10 @@
         "stylelint-config-html",
         "stylelint-config-standard"
     ],
+    "ignoreFiles": [
+        "dist/**",
+        "node_modules/**"
+    ],
     "rules": {
         "selector-pseudo-class-no-unknown": [
             true,

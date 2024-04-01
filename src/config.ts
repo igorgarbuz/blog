@@ -19,11 +19,11 @@ export const SOCIALS: SocialObject[] = [
         href: "https://github.com/igorgarbuz",
         linkTitle: ` ${SITE.title} on GitHub`,
         name: "Github",
-      },
-      {
+    },
+    {
         active: false,
         href: "https://twitter.com/igarbuz",
         linkTitle: `${SITE.title} on X`,
         name: "Twitter",
-      },
+    },
 ]
