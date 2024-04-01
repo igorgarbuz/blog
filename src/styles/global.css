@@ -40,9 +40,6 @@
     --spacing-128: 12.8rem;
     --spacing-768: 76.8rem;
 
-    /* Scrollbar */
-    --color-scrollbar-thumb: hsl(173deg 10% 20%);
-
     /* Shadows */
     --shadow-sm: 0px 0px 4px 4px hsl(0deg 0% 0% / 4%);
     --shadow-md: 0px 0px 10px 4px hsl(0deg 0% 0% / 10%);
@@ -58,9 +55,9 @@
 html {
     font-size: 62.5%; /* makes 1rem = 10px, for font-size to be 16px will need to set it to 1.6rem */
     scroll-padding-top: var(--spacing-64);
-    scroll-behavior: auto; /* TODO: change to smooth */
+    scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: var(--color-scrollbar-thumb) transparent;
+    scrollbar-color: var(--color-bg-hover) transparent;
 }
 
 html,
@@ -220,4 +217,9 @@ figcaption {
     figcaption a:hover {
         color: var(--color-txt-secondary-hover);
     }
+}
+
+/* Used to avoid color transitions during theme switch */
+.disable-transition * {
+    transition: none;
 }

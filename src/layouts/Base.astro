@@ -3,7 +3,6 @@ import "@styles/themes.css"
 import "@styles/global.css"
 import type { CollectionEntry } from "astro:content"
 import { SITE, LOCALE } from "@config"
-import { ViewTransitions } from "astro:transitions"
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import BaseHead from "@components/BaseHead.astro"
@@ -34,8 +33,6 @@ const {
             ogImage={ogImage}
             title={title}
         />
-
-        <ViewTransitions />
     </head>
     <body>
         <Header />

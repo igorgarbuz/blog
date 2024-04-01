@@ -17,12 +17,14 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 
 ## Features wishlist (alpha order, but top priority first)
 
--   [-] Scroll-to-top button
--   [-] Invert theme icon so it shown intention of the button, not the current state
--   [-] Select analytics provider, check if it's GDPR compliant + privacy concerns
 -   [-] Test site OG image works
+-   [-] Move RSS to the bottom + add icon
+-   [-] Create and write About page
+-   [ ] Move Theme ico to the logo side
+-   [ ] Add on click scaleZ to cards to add visual feedback. Check if it works on mobile or disable
 -   [ ] Add sort posts by datePublished or dateModified
 -   [ ] Add Updates section with a date + changes in an article
+-   [ ] Scroll-to-top button
 -   [ ] Add auto OpenGraph and Twitter card generation
 -   [ ] Add git pre-push hooks for linting / testing
 -   [ ] Add search (use /components/SearchButton.astro)
@@ -45,6 +47,8 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 -   [ ] Remove unused CSS variables
 -   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge, on Mobile
 -   [ ] Uniform border-radius and reduce number of vars
+-   [x] Invert theme icon so it shown intention of the button, not the current state
+-   [x] Fix: cards color blink on refresh
 -   [x] Add header link isActive indicator
 -   [x] Fix: on mobile Cards and buttons with hover color stay highlighted after click
 -   [x] Automatic Table for contents

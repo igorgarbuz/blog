@@ -1,20 +1,11 @@
 ---
-const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION
+import { ViewTransitions } from "astro:transitions"
 
 const { author, canonicalUrl, dateModified, datePublished, description, ogImage, title } =
     Astro.props
 
 const openGraphImage = new URL(ogImage, Astro.url.origin).href
 ---
-
-{
-    /**
-     * Theme Switch as an external .js for an async quick load
-     * c.f https://docs.astro.build/en/guides/client-side-scripts/#load-external-scripts
-     * otherwise it would be included in the HTML and loaded synchronously with everything else
-     */
-}
-<script is:inline src="/theme-switch.js"></script>
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,10 +30,6 @@ const openGraphImage = new URL(ogImage, Astro.url.origin).href
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:image" content={openGraphImage} />
 
-{/* Article Published/Modified time */}
-{datePublished && <meta property="article:published_time" content={datePublished.toISOString()} />}
-{dateModified && <meta property="article:modified_time" content={dateModified.toISOString()} />}
-
 {/* Twitter */}
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalUrl} />
@@ -50,11 +37,19 @@ const openGraphImage = new URL(ogImage, Astro.url.origin).href
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={openGraphImage} />
 
+{/* Article Published/Modified time */}
+{datePublished && <meta property="article:published_time" content={datePublished.toISOString()} />}
+{dateModified && <meta property="article:modified_time" content={dateModified.toISOString()} />}
+
+<meta name="theme-color" content="" />
+
+<ViewTransitions />
+
 {
-    // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
-    // include google-site-verification tag in the heading
-    // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
-    googleSiteVerification && (
-        <meta name="google-site-verification" content={googleSiteVerification} />
-    )
+    /**
+     * Theme Switch as an external .js for an async quick load
+     * c.f https://docs.astro.build/en/guides/client-side-scripts/#load-external-scripts
+     * otherwise it would be included in the HTML and loaded synchronously with everything else
+     */
 }
+<script is:inline src="/theme-switch.js"></script>

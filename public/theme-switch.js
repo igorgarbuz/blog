@@ -4,7 +4,7 @@
  * from the main JS bundle and will load and run it in advance of the page paint.
  */
 
-const theme = (() => {
+const currentTheme = (() => {
     // Check if user already set a theme
     const localStorageTheme = localStorage.getItem("theme")
     if (localStorageTheme) {
@@ -18,9 +18,10 @@ const theme = (() => {
     return "dark"
 })()
 
-if (theme === "light") {
+if (currentTheme === "light") {
     document.documentElement.classList.add("light")
 } else {
     document.documentElement.classList.remove("light")
 }
-window.localStorage.setItem("theme", theme)
+
+window.localStorage.setItem("theme", currentTheme)
