@@ -3,18 +3,19 @@
     "type": "module",
     "version": "0.1.0",
     "scripts": {
-        "dev": "astro dev --port 5012",
-        "start": "astro dev",
-        "build": "rm -rf dist && astro check && astro build",
-        "preview": "astro preview",
         "astro": "astro",
+        "build": "rm -rf dist && astro check && astro build",
+        "check": "astro check",
+        "dev": "astro dev --port 5012",
         "lint": "stylelint '**/*.{astro,css}' && prettier --check '**/*.{js,jsx,ts,tsx,md,mdx,astro}' && eslint '**/*.{js,cjs,mjs,ts,jsx,tsx,astro}'",
-        "lint:fix": "stylelint '**/*.{astro,css}' --fix && prettier --write '**/*.{js,jsx,ts,tsx,md,mdx,astro}' && eslint --fix '**/*.{js,cjs,mjs,ts,jsx,tsx,astro}'"
+        "lint:fix": "stylelint '**/*.{astro,css}' --fix && prettier --write '**/*.{js,jsx,ts,tsx,md,mdx,astro}' && eslint --fix '**/*.{js,cjs,mjs,ts,jsx,tsx,astro}'",
+        "preview": "astro preview",
+        "start": "astro dev"
     },
     "dependencies": {
         "@astrojs/rss": "^4.0.5",
         "@astrojs/sitemap": "^3.1.2",
-        "astro": "^4.5.12",
+        "astro": "^4.5.15",
         "rehype-mathjax": "^6.0.0",
         "remark-collapse": "^0.1.2",
         "remark-math": "^6.0.0",
@@ -23,8 +24,8 @@
     },
     "devDependencies": {
         "@astrojs/check": "^0.5.10",
-        "@typescript-eslint/eslint-plugin": "^7.3.1",
-        "@typescript-eslint/parser": "^7.3.1",
+        "@typescript-eslint/eslint-plugin": "^7.5.0",
+        "@typescript-eslint/parser": "^7.5.0",
         "eslint": "^8.57.0",
         "eslint-plugin-astro": "^0.33.1",
         "prettier": "^3.2.5",

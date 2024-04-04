@@ -18,8 +18,15 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 ## Features wishlist (alpha order, but top priority first)
 
 -   [-] Test site OG image works
+-   [-] Improve fonts sizing - h1 must be bigger
+-   [-] Check the width stays at 45-75 characters (width in ch for page content)
+-   [-] Adjust line height for the wider screens
+-   [-] Check headings line height holds for multi-line headings
+-   [ ] Decrease letters spacing for headings
 -   [-] Move RSS to the bottom + add icon
 -   [-] Create and write About page
+-   [ ] Allow tables to overflow on mobile (c.f wikipedia on mobile)
+-   [ ] Migrate code snippets to [expressive-code](https://github.com/expressive-code/expressive-code) Astro plugin to avoid adding copy button with client-side JS
 -   [ ] Move Theme ico to the logo side
 -   [ ] Add on click scaleZ to cards to add visual feedback. Check if it works on mobile or disable
 -   [ ] Add sort posts by datePublished or dateModified

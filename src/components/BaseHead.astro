@@ -7,6 +7,9 @@ const { author, canonicalUrl, dateModified, datePublished, description, ogImage,
 const openGraphImage = new URL(ogImage, Astro.url.origin).href
 ---
 
+{/* TODO: remove when content is ready */}
+<meta name="robots" content="noindex" />
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
@@ -42,6 +45,9 @@ const openGraphImage = new URL(ogImage, Astro.url.origin).href
 {dateModified && <meta property="article:modified_time" content={dateModified.toISOString()} />}
 
 <meta name="theme-color" content="" />
+
+{/* Disable Dark Reader as the website already has the dark mode toggle */}
+<meta name="darkreader-lock" />
 
 <ViewTransitions />
 
