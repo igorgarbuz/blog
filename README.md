@@ -38,22 +38,20 @@ are just repeated and already present in the default headers.
 
 ## Features wishlist (alpha order, but top priority first)
 
--   [-] Allow tables to overflow to avoid excessive squeezing of columns (c.f wikipedia on mobile)
--   [ ] Add Updates section with a date + changes in an article
+-   [-] Test site OG image works
 -   [ ] Add changelog as posts frontmatter array property `date` and `changes`. Make dateUpdated to be the last date in the changes array.
 -   [ ] Add auto OpenGraph and Twitter card generation
 -   [ ] Add git pre-push hooks for linting / testing
 -   [ ] Add on click scaleZ to cards to add visual feedback (not sure I want this)
--   [ ] Add search (use /components/SearchButton.astro)
--   [ ] Add sort posts by datePublished or dateModified
+-   [ ] Add search (can wait till I have ~10 posts. use /components/SearchButton.astro for the icon)
+-   [ ] Add sort posts by datePublished or dateModified button. Default is datePublished
 -   [ ] Allow indexing through robots.txt (when everything is ready)
 -   [ ] Better colors. Consider oklch colors if any saturated value. For current dark low-chroma colors rgb should be ok.
 -   [ ] Better md footnotes styling
 -   [ ] Citations management using BibTeX
--   [ ] Configure astro to remove css comments and optimize css
+-   [ ] Tree-shaking for css https://github.com/codiume/orbit/tree/main/packages/astro-purgecss
 -   [ ] Decent SEO
--   [ ] Decrease letters spacing for headings
--   [ ] Estimated reading time (still think if need this?)
+-   [ ] Estimated reading time (still thinking if this is needed)
 -   [ ] Fix how google displays favicon in the search results
 -   [ ] Fix: Images in MD automatically properly wrapped into `<figure>` with child `<figcaption>`. Probably through rehype plugin.
 -   [ ] Fix: remark-toc should not remove a paragraph following the "Table of contents" without its own title
@@ -63,16 +61,16 @@ are just repeated and already present in the default headers.
 -   [ ] Move Theme ico to the logo side
 -   [ ] Pagination for when having many posts
 -   [ ] Perfect accessibility rating
--   [ ] Post images in folders at md file level, optimized for web
--   [ ] Posts tags management (may need when many posts on different topics)
+-   [ ] Each post with its within a folder inside `posts`, instead a single folder with all images
+-   [ ] Proper post tags management (wait till there are more posts)
 -   [ ] Remove all hardcoded css values and use css variables
 -   [ ] Remove unused CSS variables
 -   [ ] Scroll-to-top button
--   [ ] Style tables -- only horizontal lines and no outer border
--   [ ] Test site OG image works
 -   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge, on Mobile
--   [ ] Uniform border-radius and reduce number of vars
+-   [ ] Uniform border-radiuses and reduce number of different ones
 -   [x] Add header link isActive indicator
+-   [x] Style tables -- only horizontal lines and no outer border
+-   [x] Allow tables to overflow to avoid excessive squeezing of columns (c.f wikipedia on mobile)
 -   [x] Adjust line height for the wider screens - on mobile shorter line height, on desktop larger
 -   [x] Automatic Table of contents
 -   [x] Better styling of `blockquote`

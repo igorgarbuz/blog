@@ -13,7 +13,6 @@ const { datePublished, dateModified, author } = Astro.props
     {
         dateModified ? (
             <span>
-                {" "}
                 | Updated: <time>{formatDate(dateModified)}</time>
             </span>
         ) : null

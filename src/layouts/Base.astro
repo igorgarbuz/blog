@@ -7,16 +7,6 @@ import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import BaseHead from "@components/BaseHead.astro"
 
-/**
- * Make all props optional any page which is not a post and does not have all the frontmatter
- */
-// type Props = Partial<CollectionEntry<"posts">["data"]> & {
-//     frontmatter?: {
-//         title?: string
-//         description?: string
-//     }
-// }
-
 type Props = {
     frontmatter?: Partial<CollectionEntry<"posts">["data"]>
 }
