@@ -2,22 +2,27 @@
 import { getCollection } from "astro:content"
 import Base from "@layouts/Base.astro"
 import PostSummaryCard from "@components/PostSummaryCard.astro"
-import { getSortedPosts } from "@utils/posts"
+import { postFilter, sortPostsByDate } from "@utils/posts"
 
 const posts = await getCollection("posts")
 
-const sortedPosts = getSortedPosts(posts)
+const publishedPosts = posts.filter(postFilter)
+
+const sortedPosts = sortPostsByDate(publishedPosts)
 ---
 
 <Base>
     <hgroup>
-        <h1>My writings:</h1>
-        <p>Hi, I'm Igor and this is my writing space. I write mainly about ML and Web tech.</p>
+        <h1>My writings</h1>
+        <p>
+            Hi, I'm Igor. I write about my ML experiments, programming, and other things that that
+            could be interesting to others. Sometimes in a hope somebody won't step on the same rake
+            I did, sometimes from a pure curiosity.
+        </p>
     </hgroup>
     {
         sortedPosts.length > 0 && (
             <section>
-                <h2>My articles</h2>
                 <ul>
                     {sortedPosts.map(
                         ({
@@ -41,6 +46,10 @@ const sortedPosts = getSortedPosts(posts)
 </Base>
 
 <style>
+    hgroup {
+        margin-bottom: var(--spacing-48);
+    }
+
     ul {
         list-style: none;
         padding: 0;

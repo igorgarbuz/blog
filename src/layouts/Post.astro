@@ -2,7 +2,6 @@
 // Nesting layouts can be a good practice, like described in https://docs.astro.build/en/tutorial/4-layouts/3/
 import Base from "./Base.astro"
 import type { CollectionEntry } from "astro:content"
-import { SITE } from "@config"
 import FormattedDate from "@components/FormattedDate.astro"
 
 interface Props {
@@ -10,17 +9,14 @@ interface Props {
 }
 
 const { post } = Astro.props
+const { Content } = await post.render()
 
 const { data } = post
 
-const { author, datePublished, dateModified, ogImage, title } = data
-
-const ogUrl = new URL(ogImage, Astro.url.origin).href
-
-const { Content } = await post.render()
+const { author, datePublished, dateModified, title } = data
 ---
 
-<Base {...{ ...data, title: `${title} | ${SITE.title}` }} ogImage={ogUrl}>
+<Base frontmatter={data}>
     <article>
         <hgroup>
             <h1>{title}</h1>
@@ -38,7 +34,11 @@ const { Content } = await post.render()
 
 <style>
     hgroup {
-        margin-bottom: var(--spacing-16);
+        margin-bottom: var(--spacing-32);
+    }
+
+    h1 {
+        margin-bottom: 0;
     }
 
     .heading-link {

@@ -1,11 +1,11 @@
 ---
-import { SITE } from "@config"
+import RssLink from "./RssLink.astro"
 
 const props = Astro.props
 ---
 
 <footer {...props}>
-    {SITE.title} &copy {new Date().getFullYear()}
+    <em>"if you can dream — and not make dreams your master"</em> • <RssLink className="rss-link" />
 </footer>
 
 <style>
@@ -13,5 +13,9 @@ const props = Astro.props
         color: var(--color-txt-secondary);
         padding-block: var(--spacing-24);
         text-align: center;
+    }
+
+    .rss-link {
+        height: var(--font-18);
     }
 </style>

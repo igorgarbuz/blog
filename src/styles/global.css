@@ -13,6 +13,8 @@
     --font-30: 3rem;
     --font-32: 3.2rem;
     --font-36: 3.6rem;
+    --font-42: 4.2rem;
+    --font-44: 4.4rem;
     --font-48: 4.8rem;
     --font-64: 6.4rem;
     --font-96: 9.6rem;
@@ -54,7 +56,7 @@
 
 html {
     font-size: 62.5%; /* makes 1rem = 10px, for font-size to be 16px will need to set it to 1.6rem */
-    scroll-padding-top: var(--spacing-64);
+    scroll-padding-top: var(--spacing-24);
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--color-bg-hover) transparent;
@@ -86,10 +88,16 @@ body {
     font-size: var(--font-18);
     grid-template-columns: 100%;
     grid-template-rows: auto 1fr auto;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0 auto;
-    max-inline-size: var(--spacing-768);
+    max-inline-size: var(--spacing-768); /* Adjust for best readability */
     overflow-y: scroll; /* prevent layout shift when scrollbar appears */
+}
+
+@media (width >= 860px) {
+    body {
+        line-height: 1.7;
+    }
 }
 
 main {
@@ -99,27 +107,26 @@ main {
     width: 100%;
 }
 
-h1 {
-    font-size: var(--font-36);
-    margin-bottom: var(--spacing-4);
-    margin-top: var(--spacing-8);
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+    line-height: 1;
     margin: var(--spacing-32) 0 var(--spacing-16);
-    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--font-44);
 }
 
 h2 {
-    font-size: var(--font-28);
+    font-size: var(--font-32);
 }
 
 h3 {
-    font-size: var(--font-24);
+    font-size: var(--font-26);
 }
 
 h4 {
@@ -148,6 +155,7 @@ b {
 a {
     position: relative;
     color: inherit;
+    transition: color 0.1s;
 }
 
 @media (hover: hover) {

@@ -5,10 +5,6 @@
         "baseUrl": "src",
         "checkJs": true,
         "esModuleInterop": true,
-        "exclude": [
-            "dist",
-            "node_modules"
-        ],
         "forceConsistentCasingInFileNames": true,
         "jsx": "react-jsx",
         "noUnusedLocals": true,
@@ -46,4 +42,8 @@
         "strict": true,
         "strictNullChecks": true,
     },
+    "exclude": [
+        "dist",
+        "node_modules"
+    ],
 }

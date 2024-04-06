@@ -7,18 +7,37 @@ import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import BaseHead from "@components/BaseHead.astro"
 
-// Make all props optional any page which is not a post and does not have all the frontmatter
-type Props = Partial<CollectionEntry<"posts">["data"]>
+/**
+ * Make all props optional any page which is not a post and does not have all the frontmatter
+ */
+// type Props = Partial<CollectionEntry<"posts">["data"]> & {
+//     frontmatter?: {
+//         title?: string
+//         description?: string
+//     }
+// }
 
+type Props = {
+    frontmatter?: Partial<CollectionEntry<"posts">["data"]>
+}
+
+/**
+ * Using Astro convention frontmatter property to be able to use the layout
+ * by any .md file directly https://docs.astro.build/en/basics/layouts/
+ */
 const {
-    author = SITE.title,
-    canonicalUrl = new URL(Astro.url.pathname, Astro.site).href,
-    dateModified,
-    datePublished,
-    description = SITE.description,
-    ogImage = SITE.ogImage,
-    title = SITE.title,
+    frontmatter: {
+        author = SITE.author,
+        canonicalUrl = new URL(Astro.url.pathname, Astro.site).href,
+        dateModified,
+        datePublished,
+        description = SITE.description,
+        ogImage = SITE.ogImage,
+        title,
+    } = {},
 } = Astro.props
+
+let pageTitle = title ? `${title} • ${SITE.title}` : SITE.title
 ---
 
 <!doctype html>
@@ -31,7 +50,7 @@ const {
             datePublished={datePublished}
             description={description}
             ogImage={ogImage}
-            title={title}
+            title={pageTitle}
         />
     </head>
     <body>

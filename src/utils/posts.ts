@@ -1,22 +1,25 @@
 import type { CollectionEntry } from "astro:content"
 
-const postFilter = ({ data }: CollectionEntry<"posts">) => {
+type Post = CollectionEntry<"posts">
+
+const postFilter = ({ data }: Post) => {
     const isPublishTimePassed = Date.now() > new Date(data.datePublished).getTime()
+
     return !data.isDraft && (import.meta.env.DEV || isPublishTimePassed)
 }
 
-const getSortedPosts = (posts: CollectionEntry<"posts">[]) => {
-    return posts
-        .filter(postFilter)
-        .sort(
-            (postA, postB) =>
-                Math.floor(
-                    new Date(postB.data.dateModified ?? postB.data.datePublished).getTime() / 1000
-                ) -
-                Math.floor(
-                    new Date(postA.data.dateModified ?? postA.data.datePublished).getTime() / 1000
-                )
-        )
+const getPostDateMillisec = (post: Post, useDateModified: boolean): number => {
+    if (useDateModified && post.data?.dateModified) {
+        return new Date(post.data.dateModified).getTime()
+    }
+
+    return new Date(post.data.datePublished).getTime()
 }
 
-export { getSortedPosts, postFilter }
+const sortPostsByDate = (posts: Post[], byDateModified = false) =>
+    posts.sort(
+        (postA, postB) =>
+            getPostDateMillisec(postB, byDateModified) - getPostDateMillisec(postA, byDateModified)
+    )
+
+export { sortPostsByDate, postFilter }

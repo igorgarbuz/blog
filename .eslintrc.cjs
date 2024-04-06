@@ -30,6 +30,10 @@ module.exports = {
     },
     root: true,
     rules: {
+        "padding-line-between-statements": [
+            "error",
+            { blankLine: "always", next: "return", prev: "*" },
+          ],
         "sort-keys": ["error", "asc", { caseSensitive: true, minKeys: 2, natural: true }],
     },
 }

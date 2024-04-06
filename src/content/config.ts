@@ -2,6 +2,8 @@ import { SITE } from "@config"
 import { z, defineCollection } from "astro:content"
 
 /**
+ * Post title should be defined in the frontmatter of the .md file, and not inside
+ * the markdown content.
  * Besides following frontmatter .md file should have
  * a "Table of contents" h2 (i.e ## in md) title
  * that will be replaced by a collapsible auto-generated table of contents.

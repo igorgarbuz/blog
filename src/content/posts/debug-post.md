@@ -10,7 +10,10 @@ tags:
 description: Represent general structure and possible types of content
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+<details>
+    <summary>Changelog</summary>
+[2024-04-06] - Update how tables are rendered
+</details>
 
 ## Table of contents
 
@@ -192,31 +195,6 @@ function sayHelloInFiveSeconds(name) {
     // because inner is "closed over" sayHelloInFiveSeconds, inner still has
     // access to the `prompt` variable when it is finally called.
 }
-```
-
-```js
-// file: src/config.ts
-export const SOCIALS: SocialObjects = [
-    {
-        name: "Github",
-        href: "https://github.com/satnaing/astro-paper",
-        linkTitle: ` ${SITE.title} on Github`,
-        active: true,
-    },
-    {
-        name: "Facebook",
-        href: "https://github.com/satnaing/astro-paper",
-        linkTitle: `${SITE.title} on Facebook`,
-        active: true,
-    },
-    {
-        name: "Instagram",
-        href: "https://github.com/satnaing/astro-paper",
-        linkTitle: `${SITE.title} on Instagram`,
-        active: false,
-    },
-    ...
-]
 ```
 
 ## List Types
