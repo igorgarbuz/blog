@@ -1,10 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions"
 
-const { author, canonicalUrl, dateModified, datePublished, description, ogImage, title } =
+const { author, canonicalUrl, dateModified, datePublished, description, ogImage, siteName, title } =
     Astro.props
-
-const openGraphImage = new URL(ogImage, Astro.url.origin).href
 ---
 
 {/* TODO: remove when content is ready */}
@@ -12,12 +10,14 @@ const openGraphImage = new URL(ogImage, Astro.url.origin).href
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
-<link rel="icon" href="/assets/favicon.ico" />
-<link rel="manifest" href="/manifest.json" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon/favicon-512x512.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon/favicon-192x192.png" />
+<link rel="icon" sizes="any" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
 <link rel="canonical" href={canonicalUrl} />
 <meta name="generator" content={Astro.generator} />
 
@@ -32,14 +32,15 @@ const openGraphImage = new URL(ogImage, Astro.url.origin).href
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalUrl} />
-<meta property="og:image" content={openGraphImage} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content={siteName} />
 
 {/* Twitter */}
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalUrl} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={openGraphImage} />
+<meta property="twitter:image" content={ogImage} />
 
 {/* Article Published/Modified time */}
 {datePublished && <meta property="article:published_time" content={datePublished.toISOString()} />}

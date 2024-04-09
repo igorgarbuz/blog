@@ -1,9 +1,8 @@
 ---
-import { SITE } from "@config"
 import Base from "@layouts/Base.astro"
 ---
 
-<Base title={`404 Not Found | ${SITE.title}`}>
+<Base frontmatter={{ title: "404 Not Found" }}>
     <div>
         <pre
             aria-hidden="true">

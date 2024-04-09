@@ -3,8 +3,8 @@ author: Igor Garbuz
 datePublished: 2024-03-23
 dateModified: 2024-03-23
 title: Debug post
-ogImage: ../../assets/down-of-man-og.png
-isDraft: false
+ogImage: /assets/debug-post-og.jpg
+isDraft: true
 tags:
     - debug
 description: Represent general structure and possible types of content
@@ -39,17 +39,17 @@ Chameleons are also distinguished by their zygodactylous feet, their prehensile 
 Some sub-section of the previous title.
 Some chameleon species are able to change their skin coloration. Different chameleon species are able to vary their colouration and pattern through combinations of pink, blue, red, orange, green, black, brown, light blue, yellow, turquoise, and purple.
 
-#### H4 - just for ilustration, usually should not go that deep
+#### H4 - just for illustration, usually should not go that deep
 
-Some species, such as Smith's dwarf chameleon and several others in the genus Bradypodion, adjust their colours for camouflage depending on the vision of the specific predator species (for example, bird or snake) by which they are being threatened.
+Some species, such as Smith's dwarf chameleon and several others in the genus Bradypodion, adjust their colors for camouflage depending on the vision of the specific predator species (for example, bird or snake) by which they are being threatened.
 
-##### H5 - just for ilustration, usually should not go that deep
+##### H5 - just for illustration, usually should not go that deep
 
-Chameleons have two superimposed layers within their skin that control their colour and thermoregulation.
+Chameleons have two superimposed layers within their skin that control their colors and thermoregulation.
 
-###### H6 - just for ilustration, usually should not go that deep
+###### H6 - just for illustration, usually should not go that deep
 
-The skin of a chameleon also contains some yellow pigments, which combined with the blue reflected by a relaxed crystal lattice results in the characteristic green colour which is common of many chameleons in their relaxed state.
+The skin of a chameleon also contains some yellow pigments, which combined with the blue reflected by a relaxed crystal lattice results in the characteristic green colors which is common of many chameleons in their relaxed state.
 
 ## Images
 
@@ -60,6 +60,7 @@ The skin of a chameleon also contains some yellow pigments, which combined with 
 ```
 
 Here are some examples of how to include images in the content with image caption.
+
 ![Nice space image.](https://image.lexica.art/full_webp/140407a6-5252-4774-a1ff-8ee2cf7daf92)
 
 <figcaption>Nice space image. Source: <a href="https://lexica.art/prompt/50a3e4dd-740e-4c00-bb36-a7feff540157" target="_blank">lexica.art. Prompt: "Create an image of a man wandering through space in a spaceship"</a></figcaption>
@@ -73,6 +74,14 @@ Here is another image with caption and citation included using pure HTML.
     <img src="https://image.lexica.art/full_webp/1b6db6eb-9d3a-4469-8b7c-0a4149048ce5" alt="Illustration of a colony on another planet">
     <figcaption>Colony on another planet. Source: <a href="https://lexica.art/prompt/69be5d50-55a2-4671-abe0-ce34e6a310a8">lexica.art. Prompt: "Beautiful award winning 1950s simple flat 3d art editorial infographics of a moon base..."</a></figcaption>
 </figure>
+
+The following image is included from the local blog folder instead of the external source.
+
+![Aesthetic view of another planet colony](@assets/lexica-sample-outer-space-colony.webp)
+
+<figcaption>Another stunning view of future humanity colony on another planet. Source: <a href="https://lexica.art/prompt/69be5d50-55a2-4671-abe0-ce34e6a310a8">lexica.art</a></figcaption>
+
+Above is the image from the local folder, processed and optimized by the build process.
 
 ## Blockquotes
 

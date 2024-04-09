@@ -2,22 +2,21 @@
 import { getCollection } from "astro:content"
 import Base from "@layouts/Base.astro"
 import PostSummaryCard from "@components/PostSummaryCard.astro"
-import { postFilter, sortPostsByDate } from "@utils/posts"
+import { filterAndSortPosts } from "@utils/posts"
 
 const posts = await getCollection("posts")
 
-const publishedPosts = posts.filter(postFilter)
-
-const sortedPosts = sortPostsByDate(publishedPosts)
+const sortedPosts = filterAndSortPosts(posts)
 ---
 
 <Base>
     <hgroup>
-        <h1>My writings</h1>
+        <h1>Posts</h1>
         <p>
-            Hi, I'm Igor. I write about my ML experiments, programming, and other things that that
-            could be interesting to others. Sometimes in a hope somebody won't step on the same rake
-            I did, sometimes from a pure curiosity.
+            Hey, I'm Igor and here are my notes mainly on the machine learning, software and
+            hardware experiments. I hope you find something useful for yourself. Feedback is highly
+            appreciated, feel free to reach out to me on <a href="https://twitter.com/igarbuz">X</a
+            >.
         </p>
     </hgroup>
     {
@@ -48,6 +47,10 @@ const sortedPosts = sortPostsByDate(publishedPosts)
 <style>
     hgroup {
         margin-bottom: var(--spacing-48);
+    }
+
+    p {
+        color: var(--color-txt-secondary);
     }
 
     ul {

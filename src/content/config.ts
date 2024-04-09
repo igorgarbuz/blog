@@ -15,11 +15,11 @@ export const schema = z.object({
     canonicalUrl: z.string().url().optional(), // only if article was initially published under another URL
     dateModified: z.date().optional().nullable(),
     datePublished: z.date(),
-    description: z.string(),
+    description: z.string().max(160, { message: "Description should be less than 160 characters to be used in the 'description' meta tag" }),
     isDraft: z.boolean(),
     ogImage: z.string(), // og image must have a minimal size of 1200 x 630 c.f https://developers.facebook.com/docs/sharing/webmasters/images/
     tags: z.array(z.string()),
-    title: z.string(),
+    title: z.string().max(60, { message: "Title should be less than 60 characters to be used in the 'title' meta tag" }),
 })
 
 const postsCollection = defineCollection({

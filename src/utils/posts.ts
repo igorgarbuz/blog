@@ -22,4 +22,7 @@ const sortPostsByDate = (posts: Post[], byDateModified = false) =>
             getPostDateMillisec(postB, byDateModified) - getPostDateMillisec(postA, byDateModified)
     )
 
-export { sortPostsByDate, postFilter }
+const filterAndSortPosts = (posts: Post[], byDateModified = false) =>
+    sortPostsByDate(posts.filter(postFilter), byDateModified)
+
+export { filterAndSortPosts }

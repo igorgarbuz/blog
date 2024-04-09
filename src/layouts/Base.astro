@@ -27,7 +27,12 @@ const {
     } = {},
 } = Astro.props
 
-let pageTitle = title ? `${title} • ${SITE.title}` : SITE.title
+console.debug("ogImage", ogImage)
+const ogImageUrl = new URL(ogImage, Astro.url.origin).href
+
+console.debug("ogImageUrl", ogImageUrl)
+
+let pageTitle = title ? `${title} • ${SITE.siteName}` : SITE.title
 ---
 
 <!doctype html>
@@ -39,7 +44,8 @@ let pageTitle = title ? `${title} • ${SITE.title}` : SITE.title
             dateModified={dateModified}
             datePublished={datePublished}
             description={description}
-            ogImage={ogImage}
+            ogImage={ogImageUrl}
+            siteName={SITE.siteName}
             title={pageTitle}
         />
     </head>

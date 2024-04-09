@@ -221,12 +221,18 @@ hr {
 /* Text centered under the image with --color-txt-secondary color */
 figcaption {
     color: var(--color-txt-secondary);
+    margin-bottom: var(--spacing-32);
     text-align: center;
+}
+
+/* Images inserted using md syntax are wrapped into <p>, compensate for bottom margin */
+p + figcaption {
+    margin-top: calc(-1 * var(--spacing-16));
 }
 
 @media (hover: hover) {
     figcaption a:hover {
-        color: var(--color-txt-secondary-hover);
+        color: var(--color-txt-hover);
     }
 }
 

@@ -2,9 +2,10 @@ import type { Site, SocialObject } from "./types"
 
 export const SITE: Site = {
     author: "Igor Garbuz",
-    description: "Sharing my experiences and learning notes.",
-    ogImage: "/assets/down-of-man-og.webp",
-    title: "iglog",
+    description: "Insightful posts on ML, software dev, hardware projects & more. Learn from an indie researcher's hands-on experience building creative tech.",
+    ogImage: "/assets/dawn-of-man-site-og.jpg",
+    siteName: "iglog",
+    title: "iglog • AI, Hardware & Tech Notes by Igor Garbuz",
     url: "https://iglog.me/",
 }
 
@@ -17,13 +18,13 @@ export const SOCIALS: SocialObject[] = [
     {
         active: false,
         href: "https://github.com/igorgarbuz",
-        linkTitle: ` ${SITE.title} on GitHub`,
+        linkTitle: ` ${SITE.siteName} on GitHub`,
         name: "Github",
     },
     {
         active: false,
         href: "https://twitter.com/igarbuz",
-        linkTitle: `${SITE.title} on X`,
+        linkTitle: `${SITE.siteName} on X`,
         name: "Twitter",
     },
 ]
