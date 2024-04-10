@@ -105,7 +105,7 @@ The blockquote element represents content that is quoted from another source, op
 
 Here is a sentence with a footnote[^r].
 
-[^r]: Lexical.ai with prompt: "Beautiful award winning 1950s simple flat 3D art editorial infographics of a moon base, stunning lighting, perfect focus, neutral white background, epic angle, epic composition, hyper maximalist". Source: [Beautiful award winning 1950s simple flat 3d art editorial infographics](https://lexica.art/prompt/69be5d50-55a2-4671-abe0-ce34e6a310a8)
+[^r]: Lexical.ai with prompt: "Beautiful award winning 1950s simple flat 3D art editorial infographic of a moon base, stunning lighting, perfect focus, neutral white background, epic angle, epic composition, hyper maximalist". Source: [Beautiful award winning 1950s simple flat 3d art editorial infographics](https://lexica.art/prompt/69be5d50-55a2-4671-abe0-ce34e6a310a8)
 
 ### Blockquote with footnotes
 

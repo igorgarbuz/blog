@@ -155,12 +155,14 @@ b {
 a {
     position: relative;
     color: inherit;
-    transition: color 0.1s;
+    fill: currentcolor;
+    transition: color 0.1s, fill 0.1s;
 }
 
 @media (hover: hover) {
     a:hover {
         color: var(--color-txt-hover);
+        fill: var(--color-txt-hover);
     }
 }
 

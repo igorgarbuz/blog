@@ -12,9 +12,9 @@
     "eslint.validate": [
         "javascript",
         "javascriptreact",
-        "astro", // Enable .astro
-        "typescript", // Enable .ts
-        "typescriptreact" // Enable .tsx
+        "astro",
+        "typescript",
+        "typescriptreact"
     ],
     "prettier.tabWidth": 4,
     "editor.formatOnSave": true,
@@ -22,16 +22,6 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always"
     },
-    "cSpell.words": [
-        "astro",
-        "astrojs",
-        "frontmatter",
-        "Garbuz",
-        "iglog",
-        "mathjax",
-        "Personnaly",
-        "youtube"
-    ],
     "stylelint.validate": [
         "astro",
         "css",

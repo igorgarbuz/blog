@@ -1,21 +1,34 @@
 ---
 import RssLink from "./RssLink.astro"
+import GitHubLink from "./GitHubLink.astro"
 
 const props = Astro.props
 ---
 
 <footer {...props}>
-    <em>"if you can dream — and not make dreams your master"</em> • <RssLink className="rss-link" />
+    <em>"if you can dream — and not make dreams your master"</em>
+    <span class="separator">•</span>
+    <RssLink className="rss-link" />
+    <span class="separator">•</span>
+    <GitHubLink className="github-link" />
+
+    <style>
+        footer {
+            color: var(--color-txt-secondary);
+            padding-block: var(--spacing-24);
+            text-align: center;
+        }
+
+        .rss-link {
+            height: var(--font-18);
+        }
+
+        .github-link {
+            height: var(--font-18);
+        }
+
+        .separator {
+            margin-inline: var(--spacing-2);
+        }
+    </style>
 </footer>
-
-<style>
-    footer {
-        color: var(--color-txt-secondary);
-        padding-block: var(--spacing-24);
-        text-align: center;
-    }
-
-    .rss-link {
-        height: var(--font-18);
-    }
-</style>

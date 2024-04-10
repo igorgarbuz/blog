@@ -1,12 +1,12 @@
 ---
 author: Igor Garbuz
-datePublished: 2024-04-09
+datePublished: 2024-04-10
 title: Why to create your own blog
-ogImage: /assets/.jpg
+ogImage: /assets/why-to-build-your-blog-og.jpg
 isDraft: false
 tags:
     - Blog
-    - WebDev
+    - DevWeb
 description: Why bother when there are so many options to choose from (Substack, Medium, X …)? Some thoughts on the matter and the main motivations.
 ---
 

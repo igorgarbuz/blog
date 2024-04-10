@@ -11,37 +11,15 @@ My writing space I starting from a need to own my writing as not existing soluti
 -   no color flickering or layout shift
 -   dark/light theme switch
 -   proper code syntax highlighting
--   good SEO
+-   good social cards and search results formatting
 
 Astro framework seems to satisfy these criteria. It provides out-of-the-box support for markdown. It also automatically scopes styles to components by coming-up with class-names so once can write bare css in a component without worrying to affect global styles.
 
-## Specifying \_headers
-
-Return headers are usually well defined by the providers like Netlify or Vercel. However, if you need to specify custom headers, you can do it in the `_headers` file. For example, to specify a custom header for the RSS feed, you can add the following line to the `_headers` file:
-
-```
-/rss.xml
-  Content-Type: application/rss+xml; charset=utf-8
-  Cache-Control: public, max-age=3600
-```
-
-which is a more specific than the default `text/xml` c.f StackOverflow [answer](https://stackoverflow.com/questions/595616/what-is-the-correct-mime-type-to-use-for-an-rss-feed). However, any will work with most of the feed readers.
-
-For all other pages only `X-Frame-Options: SAMEORIGIN` is set to prevent clickjacking. Other two values
-
-```
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-```
-
-are just repeated and already present in the default headers.
-
-## Features wishlist (alpha order, but top priority first)
+## Features wishlist (alpha order, but top priority first with `-` sign)
 
 -   [-] Better Final colors
--   [-] Blog global OG image and 1st post OG image
--   [-] Add github link to the footer & to the 1st post
--   [x] Final <meta> title and description
+-   [-] Valid social cards
+-   [-] Enable indexing
 -   [ ] Add auto OpenGraph (ogImage) image auto generation
 -   [ ] Add automatic broken links checker
 -   [ ] Add buttons next / prev post in the bottom of the post
@@ -74,18 +52,19 @@ are just repeated and already present in the default headers.
 -   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge, on Mobile
 -   [ ] Tree-shaking for css https://github.com/codiume/orbit/tree/main/packages/astro-purgecss
 -   [ ] Uniform border-radiuses and reduce number of different ones
--   [x] Test site OG image works
--   [x] Decent SEO
+-   [x] Add github link to the footer & to the 1st post
 -   [x] Add header link isActive indicator
--   [x] Style tables -- only horizontal lines and no outer border
--   [x] Allow tables to overflow to avoid excessive squeezing of columns (c.f wikipedia on mobile)
 -   [x] Adjust line height for the wider screens - on mobile shorter line height, on desktop larger
+-   [x] Allow tables to overflow to avoid excessive squeezing of columns (c.f wikipedia on mobile)
 -   [x] Automatic Table of contents
 -   [x] Better styling of `blockquote`
+-   [x] Blog global OG image and 1st post OG image
 -   [x] Check headings line height holds ok for multi-line headings
 -   [x] Code syntax highlighting
 -   [x] Create and write About page
+-   [x] Decent SEO
 -   [x] Error page
+-   [x] Final <meta> title and description
 -   [x] Fix: cards color blink on refresh
 -   [x] Fix: on mobile Cards and buttons with hover color stay highlighted after click
 -   [x] H1 H2 H3 H4 H5 H6 proper styling
@@ -102,3 +81,29 @@ are just repeated and already present in the default headers.
 -   [x] Robots.txt
 -   [x] Setup auto-deploy on push to main
 -   [x] Sitemap
+-   [x] Style tables -- only horizontal lines and no outer border
+-   [x] Test site OG image works
+
+## Technical notes
+
+### Specifying \_headers
+
+Return headers are usually well defined by the providers like Netlify or Vercel. However, if you need to specify custom headers, you can do it in the `_headers` file. For example, to specify a custom header for the RSS feed, you can add the following line to the `_headers` file:
+
+```
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+```
+
+which is a more specific than the default `text/xml` c.f StackOverflow [answer](https://stackoverflow.com/questions/595616/what-is-the-correct-mime-type-to-use-for-an-rss-feed).
+
+For all other pages `X-Frame-Options: SAMEORIGIN` is set to prevent clickjacking. `X-Content-Type-Options: nosniff` to prevent MIME type sniffing. `Referrer-Policy: strict-origin-when-cross-origin` to prevent leaking of the referrer to other sites.
+
+```
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+```
+
+These values are set by default by most providers, but we can specify it here to make it more explicit.
