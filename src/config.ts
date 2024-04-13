@@ -5,7 +5,7 @@ export const SITE: Site = {
     description: "Insightful posts on ML, software dev, hardware projects & more. Learn from an indie researcher's hands-on experience building creative tech.",
     ogImage: "/assets/dawn-of-man-site-og.jpg",
     siteName: "iglog",
-    title: "iglog • AI, Hardware & Tech Notes by Igor Garbuz",
+    title: "iglog • Tech, AI and Hardware Notes by Igor Garbuz",
     url: "https://iglog.me/",
 }
 

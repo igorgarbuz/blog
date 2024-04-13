@@ -56,10 +56,11 @@
 
 html {
     font-size: 62.5%; /* makes 1rem = 10px, for font-size to be 16px will need to set it to 1.6rem */
-    scroll-padding-top: var(--spacing-24);
     scroll-behavior: smooth;
+    scroll-padding-top: var(--spacing-24);
+    scrollbar-color: var(--color-bg-highlight) transparent;
     scrollbar-width: thin;
-    scrollbar-color: var(--color-bg-hover) transparent;
+    -webkit-font-smoothing: antialiased;
 }
 
 html,
@@ -114,7 +115,7 @@ h4,
 h5,
 h6 {
     line-height: 1;
-    margin: var(--spacing-32) 0 var(--spacing-16);
+    margin: var(--spacing-48) 0 var(--spacing-16);
 }
 
 h1 {
@@ -144,7 +145,7 @@ h6 {
 }
 
 p {
-    margin: 0 0 var(--spacing-16);
+    margin: var(--spacing-16) 0;
 }
 
 strong,
@@ -161,16 +162,18 @@ a {
 
 @media (hover: hover) {
     a:hover {
-        color: var(--color-txt-hover);
-        fill: var(--color-txt-hover);
+        color: var(--color-txt-highlight);
+        fill: var(--color-txt-highlight);
     }
+}
+
+li {
+    margin: var(--spacing-8) 0;
 }
 
 table {
     border-collapse: collapse;
-    display: block;
-    margin-bottom: var(--spacing-16);
-    overflow-x: auto;
+    margin: var(--spacing-16) auto;
     table-layout: auto;
 }
 
@@ -180,14 +183,16 @@ td {
 }
 
 tr {
-    border-bottom: 1px solid var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-bg-highlight);
 }
 
 video,
 img {
-    max-width: 100%;
-    height: auto;
     border-radius: var(--spacing-4);
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 code {
@@ -197,8 +202,9 @@ code {
 }
 
 pre {
-    padding: var(--spacing-24);
     border-radius: var(--rounded-8);
+    font-size: var(--font-16);
+    padding: var(--spacing-24);
 }
 
 /* Reset code blocks values that will be styled by shiki */
@@ -207,10 +213,7 @@ pre > code {
 }
 
 blockquote {
-    border-left: 4px solid var(--accent);
-    padding: 0 0 0 20px;
-    margin: 0;
-    font-size: 1.333em;
+    font-style: italic;
 }
 
 hr {
@@ -230,12 +233,6 @@ figcaption {
 /* Images inserted using md syntax are wrapped into <p>, compensate for bottom margin */
 p + figcaption {
     margin-top: calc(-1 * var(--spacing-16));
-}
-
-@media (hover: hover) {
-    figcaption a:hover {
-        color: var(--color-txt-hover);
-    }
 }
 
 /* Used to avoid color transitions during theme switch */

@@ -21,7 +21,10 @@ export default defineConfig({
         rehypePlugins: [rehypeMathjax],
         remarkPlugins: [
             [remarkToc, { heading: CONTENTS_PATTERN }],
-            [remarkCollapse, { summary: (toc: string) => toc, test: CONTENTS_PATTERN }],
+            [remarkCollapse, {
+                summary: (toc: string) => toc,
+                test: CONTENTS_PATTERN
+            }],
             remarkMath,
         ],
         shikiConfig: {
