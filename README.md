@@ -1,5 +1,7 @@
 # Simple Astro blog project for technical and scientific writing
 
+## Check it out 👉 [here](https://iglog.me)
+
 My writing space I starting from a need to own my writing as not existing solution seemed to find something I was looking for. Main wished for this blog are:
 
 -   SSG
@@ -15,72 +17,43 @@ My writing space I starting from a need to own my writing as not existing soluti
 
 Astro framework seems to satisfy these criteria. It provides out-of-the-box support for markdown. It also automatically scopes styles to components by coming-up with class-names so once can write bare css in a component without worrying to affect global styles.
 
-## Features wishlist (alpha order, but top priority first with `-` sign)
+## Features wishlist
 
--   [-] Valid social cards
--   [-] Enable indexing
--   [ ] Convert colors to HSL and fine-tune theme
--   [ ] Fix large tables cannot overflow. Need to wrap tables into a div with `overflow-x: auto`. This is a common practice on Wikipedia. Use Rehype plugin
--   [ ] Alight Shiki code blocks background with the theme
--   [ ] Add auto OpenGraph (ogImage) image auto generation
--   [ ] Add automatic broken links checker
+-   [ ] Add OpenGraph (ogImage) image generation
 -   [ ] Add buttons next / prev post in the bottom of the post
 -   [ ] Add changelog as posts frontmatter array property `date` and `changes`. Make dateUpdated been the last change date. Changelog section should be added to the end of the post through the post layout.
--   [ ] Add git pre-push hooks for linting / testing
--   [ ] Add on click scaleZ to cards to add visual feedback (not sure I want this)
--   [ ] Add search (can wait till I have ~10 posts. use /components/SearchButton.astro for the icon)
+-   [ ] Add search (can wait till I have ~10 posts)
 -   [ ] Add sort posts by datePublished or dateModified button. Default is datePublished
--   [ ] Add the comment section (not sure if need this)
--   [ ] Better md footnotes styling
+-   [ ] Add the comment section (not sure if I need this)
+-   [ ] Alight Shiki code blocks background with the theme
+-   [ ] Automatic broken links checker?
+-   [ ] Better Markdown footnotes styling
 -   [ ] Citations management using BibTeX
--   [ ] Each post with its within a folder inside `posts`, instead a single folder with all images
+-   [ ] Convert colors to HSL & refine the palette
+-   [ ] Each post with within its folder with corresponding assets instead of a single folder with all the images
 -   [ ] Estimated reading time (still thinking if this is needed)
--   [ ] Fix how google displays favicon in the search results
 -   [ ] Fix: Images in MD should be properly wrapped into `<figure>` with child `<figcaption>`. Probably need a rehype plugin.
+-   [ ] Fix: large tables cannot overflow. Need to wrap tables into a div with `overflow-x: auto`. This is a common practice on Wikipedia. Use a Rehype plugin
+-   [ ] Fix: low resolution favicon in google the search results
 -   [ ] Fix: remark-toc should not remove a paragraph following the "Table of contents" without its own title
--   [ ] Great lighthouse scores
--   [ ] Images should be auto-numbered for referencing (fig. 1, fig. 2, etc.)
--   [ ] Migrate code snippets to [expressive-code](https://github.com/expressive-code/expressive-code) Astro plugin to avoid adding copy button with client-side JS
+-   [ ] Images auto-numbering for referencing (fig. 1, fig. 2, etc.)
+-   [ ] Improve CSS tree-shaking https://github.com/codiume/orbit/tree/main/packages/astro-purgecss
+-   [ ] Migrate code snippets to [expressive-code](https://github.com/expressive-code/expressive-code) Astro plugin to avoid adding copy button to the client-side JS
 -   [ ] Pagination for when having many posts
--   [ ] Perfect accessibility rating
--   [ ] Proper post tags management (wait till there are more posts)
--   [ ] Remove all hardcoded css values and use css variables
+-   [ ] Proper post tags page (wait till there are more posts)
+-   [ ] Publish lighthouse scores
+-   [ ] Remove all hardcoded css values and use css variables instead
 -   [ ] Remove unused CSS variables
 -   [ ] Scroll-to-top button
--   [ ] Tested on Windows and Linux, in Firefox, Chrome, and Edge, on Mobile
--   [ ] Tree-shaking for css https://github.com/codiume/orbit/tree/main/packages/astro-purgecss
 -   [ ] Uniform border-radiuses and reduce number of different ones
--   [x] Add github link to the footer & to the 1st post
--   [x] Better Final colors
--   [x] Add header link isActive indicator
--   [x] Adjust line height for the wider screens - on mobile shorter line height, on desktop larger
--   [x] Allow tables to overflow to avoid excessive squeezing of columns (c.f wikipedia on mobile)
 -   [x] Automatic Table of contents
--   [x] Blog global OG image and 1st post OG image
--   [x] Check headings line height holds ok for multi-line headings
--   [x] Code syntax highlighting
--   [x] Create and write About page
--   [x] SEO tags
 -   [x] Error 404 page
--   [x] Final <meta> title and description
--   [x] Fix: cards color blink on refresh
--   [x] Fix: on mobile Cards and buttons with hover color stay highlighted after click
--   [x] H1 H2 H3 H4 H5 H6 proper styling
--   [x] Header menu links remove hover and increase clickable area
--   [x] Improve fonts sizing - h1 must be bigger, scale non-linearly
--   [x] Inline code proper styling
--   [x] Invert theme icon so it shown intention of the button, not the current state
--   [x] Latex support
--   [x] Light/Dark mode switch without flickering on page load
--   [x] Move RSS to the bottom + add icon
--   [x] Posts cards in the home page
+-   [x] LaTeX equations syntax support
+-   [x] Light/Dark mode switch without color flickering on page load
 -   [x] RSS
--   [x] Remove unused pages from header menu
--   [x] Robots.txt
+-   [x] SEO tags
 -   [x] Setup auto-deploy on push to main
 -   [x] Sitemap
--   [x] Style tables -- only horizontal lines and no outer border
--   [x] Test site OG image works
 
 ## Technical notes
 

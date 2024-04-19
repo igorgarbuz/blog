@@ -2,7 +2,8 @@ import type { Site } from "./types"
 
 export const SITE: Site = {
     author: "Igor Garbuz",
-    description: "Insightful posts on ML, software dev, hardware projects & more. Learn from an indie researcher's hands-on experience building creative tech.",
+    description:
+        "Informative posts on software / ML and hardware DIY projects. Learn from an indie researcher's hands-on experience building creative tech.",
     ogImage: "/assets/dawn-of-man-site-og.jpg",
     siteName: "iglog",
     title: "iglog • Tech, AI and Hardware Notes by Igor Garbuz",
@@ -10,6 +11,6 @@ export const SITE: Site = {
 }
 
 export const LOCALE = {
-    lang: "en", // html lang code. Set this empty and default will be "en"
-    langTag: ["en-US"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+    lang: "en",
+    langTag: ["en-US"],
 } as const

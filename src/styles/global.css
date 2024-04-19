@@ -173,8 +173,12 @@ li {
 
 table {
     border-collapse: collapse;
-    margin: var(--spacing-16) auto;
+    margin: var(--spacing-32) auto;
     table-layout: auto;
+}
+
+th {
+    border-bottom: 2px solid var(--color-bg-highlight);
 }
 
 th,
@@ -191,8 +195,16 @@ img {
     border-radius: var(--spacing-4);
     display: block;
     height: auto;
-    margin: 0 auto;
+    margin: var(--spacing-32) auto;
     max-width: 100%;
+}
+
+img[alt$="size-small"] {
+    width: 400px;
+}
+
+img[alt$="size-medium"] {
+    width: 580px;
 }
 
 code {
@@ -233,6 +245,14 @@ figcaption {
 /* Images inserted using md syntax are wrapped into <p>, compensate for bottom margin */
 p + figcaption {
     margin-top: calc(-1 * var(--spacing-16));
+}
+
+mjx-container {
+    overflow-x: auto;
+}
+
+mjx-container > svg {
+    margin: var(--spacing-16) auto;
 }
 
 /* Used to avoid color transitions during theme switch */

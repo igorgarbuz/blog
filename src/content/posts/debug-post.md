@@ -337,3 +337,19 @@ E = mc^2
 
 
 $$
+
+Maxwell's equation - Faraday's law
+
+$$
+
+\oint_C {E \cdot d\ell = - \frac{d}{{dt}}} \int_S {B_n dA}
+
+
+$$
+
+Lets try a very long equation that should overflow the container.
+Below is "Reverse Process Variational Lower Bound Decomposition Multiple KL-Divergence"
+
+$$
+\begin{aligned}L_\text{VLB} &amp;= \mathbb{E}_{q(\mathbf{x}_{0:T})} \Big[ \log\frac{q(\mathbf{x}_{1:T}\vert\mathbf{x}_0)}{p_\theta(\mathbf{x}_{0:T})} \Big] \\&amp;= \mathbb{E}_q \Big[ \log\frac{\prod_{t=1}^T q(\mathbf{x}_t\vert\mathbf{x}_{t-1})}{ p_\theta(\mathbf{x}_T) \prod_{t=1}^T p_\theta(\mathbf{x}_{t-1} \vert\mathbf{x}_t) } \Big] \\&amp;= \mathbb{E}_q [\underbrace{D_\text{KL}(q(\mathbf{x}_T \vert \mathbf{x}_0) \parallel p_\theta(\mathbf{x}_T))}_{L_T} + \sum_{t=2}^T \underbrace{D_\text{KL}(q(\mathbf{x}_{t-1} \vert \mathbf{x}_t, \mathbf{x}_0) \parallel p_\theta(\mathbf{x}_{t-1} \vert\mathbf{x}_t))}_{L_{t-1}} \underbrace{- \log p_\theta(\mathbf{x}_0 \vert \mathbf{x}_1)}_{L_0} ]\end{aligned}
+$$
