@@ -4,7 +4,7 @@ datePublished: 2024-03-23
 dateModified: 2024-03-23
 title: Debug post
 ogImage: /assets/debug-post-og.jpg
-isDraft: true
+isDraft: false
 tags:
     - debug
 description: Represent general structure and possible types of content
