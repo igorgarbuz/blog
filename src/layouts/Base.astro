@@ -27,10 +27,7 @@ const {
     } = {},
 } = Astro.props
 
-console.debug("ogImage", ogImage)
 const ogImageUrl = new URL(ogImage, Astro.url.origin).href
-
-console.debug("ogImageUrl", ogImageUrl)
 
 let pageTitle = title ? `${title} • ${SITE.siteName}` : SITE.title
 ---

@@ -29,6 +29,7 @@ Astro framework seems to satisfy these criteria. It provides out-of-the-box supp
 -   [ ] Automatic broken links checker?
 -   [ ] Better Markdown footnotes styling
 -   [ ] Citations management using BibTeX
+-   [ ] Improve light theme colors for accessibility and validate at https://pagespeed.web.dev/
 -   [ ] Convert colors to HSL & refine the palette
 -   [ ] Each post with within its folder with corresponding assets instead of a single folder with all the images
 -   [ ] Estimated reading time (still thinking if this is needed)
@@ -63,11 +64,10 @@ Return headers are usually well defined by the providers like Netlify or Vercel.
 
 ```
 /rss.xml
-  Content-Type: application/rss+xml; charset=utf-8
   Cache-Control: public, max-age=3600
 ```
 
-which is a more specific than the default `text/xml` c.f StackOverflow [answer](https://stackoverflow.com/questions/595616/what-is-the-correct-mime-type-to-use-for-an-rss-feed).
+Set 1h cache age through `Cache-Control` for not frequently updated blogs to avoid sur-charging rss feed apps.
 
 For all other pages `X-Frame-Options: SAMEORIGIN` is set to prevent clickjacking. `X-Content-Type-Options: nosniff` to prevent MIME type sniffing. `Referrer-Policy: strict-origin-when-cross-origin` to prevent leaking of the referrer to other sites.
 

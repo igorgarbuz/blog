@@ -30,6 +30,7 @@ module.exports = {
     },
     root: true,
     rules: {
+        "no-console": ["error", { "allow": ["warn", "error"] }],
         "padding-line-between-statements": [
             "error",
             { blankLine: "always", next: "return", prev: "*" },
