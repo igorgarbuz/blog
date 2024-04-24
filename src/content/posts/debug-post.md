@@ -53,7 +53,7 @@ The skin of a chameleon also contains some yellow pigments, which combined with 
 
 ## Images
 
-#### Syntax
+**Syntax**
 
 ```markdown
 ![Alt text](./full/or/relative/path/of/image)
@@ -89,14 +89,14 @@ The blockquote element represents content that is quoted from another source, op
 
 ### Blockquote without attribution
 
-#### Syntax
+**Syntax**
 
 ```markdown
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 ```
 
-#### Output
+**Output**
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
@@ -109,14 +109,14 @@ Here is a sentence with a footnote[^r].
 
 ### Blockquote with footnotes
 
-#### Syntax
+**Syntax**
 
 ```markdown
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
 ```
 
-#### Output
+**Output**
 
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
@@ -125,7 +125,7 @@ Here is a sentence with a footnote[^r].
 
 ## Tables
 
-#### Syntax
+**Syntax**
 
 ```markdown
 | Italics   |   Bold   |  Code  |
@@ -133,13 +133,13 @@ Here is a sentence with a footnote[^r].
 | _italics_ | **bold** | `code` |
 ```
 
-#### Output
+**Output**
 
 | Italics   |   Bold   |  Code  |
 | :-------- | :------: | :----: |
 | _italics_ | **bold** | `code` |
 
-#### Big table
+**Big table**
 
 Here is my big table.
 
@@ -169,7 +169,7 @@ Here is my big table.
 
 ## Code Blocks
 
-#### Syntax
+**Syntax**
 
 we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntac, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
 
@@ -203,7 +203,7 @@ Output
 </html>
 ```
 
-#### Some more examples of different languages
+**Some more examples of different languages**
 
 ```bash
 git clone https://github.com/pytorch/pytorch.git
@@ -238,7 +238,7 @@ function sayHelloInFiveSeconds(name) {
 
 ### Ordered List
 
-#### Syntax
+**Syntax**
 
 ```markdown
 1. First item
@@ -246,7 +246,7 @@ function sayHelloInFiveSeconds(name) {
 3. Third item
 ```
 
-#### Output
+**Output**
 
 1. First item
 2. Second item
@@ -254,7 +254,7 @@ function sayHelloInFiveSeconds(name) {
 
 ### Unordered List
 
-#### Syntax
+**Syntax**
 
 ```markdown
 -   List item
@@ -262,7 +262,7 @@ function sayHelloInFiveSeconds(name) {
 -   And another item
 ```
 
-#### Output
+**Output**
 
 -   List item
 -   Another item
@@ -270,7 +270,7 @@ function sayHelloInFiveSeconds(name) {
 
 ### Nested list
 
-#### Syntax
+**Syntax**
 
 ```markdown
 -   Fruit
@@ -282,7 +282,7 @@ function sayHelloInFiveSeconds(name) {
     -   Cheese
 ```
 
-#### Output
+**Output**
 
 -   Fruit
     -   Apple
@@ -294,7 +294,7 @@ function sayHelloInFiveSeconds(name) {
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 
-#### Syntax
+**Syntax**
 
 ```markdown
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
@@ -308,7 +308,7 @@ Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the ses
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 ```
 
-#### Output
+**Output**
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
