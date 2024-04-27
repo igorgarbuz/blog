@@ -47,6 +47,28 @@ let pageTitle = title ? `${title} • ${SITE.siteName}` : SITE.title
         />
     </head>
     <body>
+        {
+            /* Inline script to set the theme based on the user's preference or the default theme
+            implemented as IIFE inline script to avoid FOUC (Flash of Unstyled Content) when the theme is set.
+            This script is blocking the rendering of the page until it is executed, but given it's size it's negligible.
+            Placing it just after the <body> tag ensures that the 'document' object is available.
+            An alternative approach is to place it in a separate .js file, which is loaded asynchronously inside the <head> tag.
+            This will introduce an additional network request, will require adding document.addEventListener('DOMContentLoaded', ...)
+            listener, and, given asynchronous nature, won't guarantee that the script execution ends before layout is rendered,
+            event thought 99.9% of the time it will be executed before the layout.
+            */
+        }
+        <script is:inline>
+            ;(function () {
+                const currentTheme =
+                    localStorage.getItem("theme") ||
+                    (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+
+                document.documentElement.classList.add(currentTheme)
+                localStorage.setItem("theme", currentTheme)
+            })()
+        </script>
+
         <Header />
         {
             /* Current layout assumes everything in main is centered

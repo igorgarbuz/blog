@@ -7,14 +7,7 @@ const { author, canonicalUrl, dateModified, datePublished, description, ogImage,
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon/favicon-512x512.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon/favicon-192x192.png" />
-<link rel="icon" sizes="any" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon-64x64.png" />
 <link rel="canonical" href={canonicalUrl} />
 <meta name="generator" content={Astro.generator} />
 
@@ -49,12 +42,3 @@ const { author, canonicalUrl, dateModified, datePublished, description, ogImage,
 <meta name="darkreader-lock" />
 
 <ViewTransitions />
-
-{
-    /**
-     * Theme Switch as an external .js for an async quick load
-     * c.f https://docs.astro.build/en/guides/client-side-scripts/#load-external-scripts
-     * otherwise it would be included in the HTML and loaded synchronously with everything else
-     */
-}
-<script is:inline src="/theme-switch.js"></script>

@@ -31,6 +31,7 @@ module.exports = {
     root: true,
     rules: {
         "no-console": ["error", { "allow": ["warn", "error"] }],
+        "no-extra-semi": "off",
         "padding-line-between-statements": [
             "error",
             { blankLine: "always", next: "return", prev: "*" },

@@ -12,5 +12,4 @@ export const SITE: Site = {
 
 export const LOCALE = {
     lang: "en",
-    langTag: ["en-US"],
 } as const
