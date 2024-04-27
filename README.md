@@ -1,19 +1,22 @@
 # Simple Astro blog project for technical and scientific writing
 
-## Check it out 👉 [here](https://iglog.me)
+## Check out the blog 👉 [here](https://iglog.me)
 
-My writing space I starting from a need to own my writing as not existing solution seemed to find something I was looking for. Main wished for this blog are:
+## Lighthouse scores
+
+[![Lighthouse scores](./lighthouse-scores.webp)](https://pagespeed.web.dev/analysis/https-iglog-me/7b7qahiher?form_factor=desktop)
+
+## Specs
 
 -   SSG
 -   markdown with latex support
 -   extendable with Remark/Rehype plugins
--   minimal non-Dev dependencies
 -   bare html/css syntax
 -   minimal client side JS
 -   no color flickering or layout shift
 -   dark/light theme switch
--   proper code syntax highlighting
--   good social cards and search results formatting
+-   code syntax highlighting
+-   smooth page transitions
 
 Astro framework seems to satisfy these criteria. It provides out-of-the-box support for markdown. It also automatically scopes styles to components by coming-up with class-names so once can write bare css in a component without worrying to affect global styles.
 
@@ -85,8 +88,6 @@ The color palette is defined int `/src/styles/themes.css`. It is designed with a
 
 It's possible to mage this pallet even smaller by removing the `--color-txt-highlight` color and managing links hover highlight by the `opacity` property.
 Hoverer, in practice reducing the opacity works well only for the primary text color. For the secondary low-contrast text `--color-txt-secondary` the best is to increase the lightness, which is the opposite to the decrease opacity.
-
-The `--color-bg-highlight` variable can be better named `--color-bg-secondary-hover`, but for this project it was needed needed to highlight the primary background on hover, so the named is shortened.
 
 Here the following methodology of color picking was used:
 
