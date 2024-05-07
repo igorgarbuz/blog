@@ -3,11 +3,13 @@ import tsEslint from 'typescript-eslint';
 import eslint from "@eslint/js";
 
 export default tsEslint.config(
+    {
+        ignores: ["dist/*", "public/*", ".astro/*"],
+    },
     eslint.configs.recommended,
     ...tsEslint.configs.recommended,
     ...eslintPluginAstro.configs['flat/recommended'],
     {
-        ignores: [".vscode/", "node_modules/", "dist/", "public/", ".astro/"],
         languageOptions: {
             globals: {
                 browser: true,
