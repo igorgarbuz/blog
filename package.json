@@ -34,6 +34,6 @@
         "stylelint-config-html": "^1.1.0",
         "stylelint-config-standard": "^36.0.0",
         "typescript": "^5.4.5",
-        "typescript-eslint": "^7.8.0"
+        "typescript-eslint": "^7.12.0"
     }
 }
