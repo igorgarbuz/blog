@@ -22,7 +22,7 @@ export const schema = z.object({
     isDraft: z.boolean(),
     ogImage: z.string(), // og image must have a minimal size of 1200 x 630 c.f https://developers.facebook.com/docs/sharing/webmasters/images/
     tags: z.array(z.string()),
-    title: z.string().max(60, {
+    title: z.string().max(65, {
         message: "Title should be less than 60 characters to be used in the 'title' meta tag",
     }),
 })
