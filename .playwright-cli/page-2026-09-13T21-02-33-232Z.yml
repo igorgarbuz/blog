@@ -1,0 +1,55 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - navigation [ref=f1e3]:
+      - link "Igor Garbuz" [ref=f1e4] [cursor=pointer]:
+        - /url: /
+      - list [ref=f1e6]:
+        - listitem [ref=f1e7]:
+          - link "About" [ref=f1e8] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=f1e9]:
+          - button "Theme toggle button" [ref=f1e10] [cursor=pointer]
+  - main [ref=f1e14]:
+    - generic [ref=f1e15]:
+      - heading "Posts" [level=1] [ref=f1e16]
+      - paragraph [ref=f1e17]:
+        - text: Hey there 👋, I'm Igor. Below are my notes on software, machine learning and hardware. Hope you find something useful. Feedback is very welcome, feel free to reach out on
+        - link "X" [ref=f1e18] [cursor=pointer]:
+          - /url: https://twitter.com/igarbuz
+        - text: .
+    - list [ref=f1e20]:
+      - listitem [ref=f1e21]:
+        - 'link "Why I Think the AI Takeover Is Overstated Published: Sep 13, 2026 I think the likelihood of an AI takeover is overstated. Commercial demand, technical safeguards, and human governance could reduce the risk." [ref=f1e22] [cursor=pointer]':
+          - /url: /posts/ai-takeover-overstated
+          - generic [ref=f1e23]:
+            - heading "Why I Think the AI Takeover Is Overstated" [level=2] [ref=f1e24]
+            - generic [ref=f1e25]:
+              - text: "Published:"
+              - time [ref=f1e26]: Sep 13, 2026
+          - generic [ref=f1e27]: I think the likelihood of an AI takeover is overstated. Commercial demand, technical safeguards, and human governance could reduce the risk.
+      - listitem [ref=f1e28]:
+        - 'link "The Future of Supercomputers: Liquid Cooling and Energy Recycling Published: Jun 27, 2024 Explore the future of supercomputers with liquid cooling and energy recycling, addressing power and cooling challenges effectively." [ref=f1e29] [cursor=pointer]':
+          - /url: /posts/liquid-cooled-energy-recycled-supercomputers
+          - generic [ref=f1e30]:
+            - 'heading "The Future of Supercomputers: Liquid Cooling and Energy Recycling" [level=2] [ref=f1e31]'
+            - generic [ref=f1e32]:
+              - text: "Published:"
+              - time [ref=f1e33]: Jun 27, 2024
+          - generic [ref=f1e34]: Explore the future of supercomputers with liquid cooling and energy recycling, addressing power and cooling challenges effectively.
+      - listitem [ref=f1e35]:
+        - 'link "Why Build Your Tech Blog from Scratch Published: Apr 19, 2024 Why bother building a blog despite the plethora of platforms like Substack, Medium, X, etc.? Explore my thoughts and reasons to use Astro." [ref=f1e36] [cursor=pointer]':
+          - /url: /posts/why-build-your-blog
+          - generic [ref=f1e37]:
+            - heading "Why Build Your Tech Blog from Scratch" [level=2] [ref=f1e38]
+            - generic [ref=f1e39]:
+              - text: "Published:"
+              - time [ref=f1e40]: Apr 19, 2024
+          - generic [ref=f1e41]: Why bother building a blog despite the plethora of platforms like Substack, Medium, X, etc.? Explore my thoughts and reasons to use Astro.
+  - contentinfo [ref=f1e42]:
+    - link "Open the RSS feed" [ref=f1e43] [cursor=pointer]:
+      - /url: /rss.xml
+      - text: RSS
+    - generic [ref=f1e48]: •
+    - link "Blog GitHub" [ref=f1e49] [cursor=pointer]:
+      - /url: https://github.com/igorgarbuz/blog
+      - img "Blog GitHub" [ref=f1e50]

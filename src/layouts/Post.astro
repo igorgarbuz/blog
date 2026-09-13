@@ -13,18 +13,14 @@ const { Content } = await render(post)
 
 const { data } = post
 
-const { author, datePublished, dateModified, title } = data
+const { datePublished, dateModified, title } = data
 ---
 
 <Base frontmatter={data}>
     <article>
         <hgroup>
             <h1>{title}</h1>
-            <FormattedDate
-                author={author}
-                datePublished={datePublished}
-                dateModified={dateModified}
-            />
+            <FormattedDate datePublished={datePublished} dateModified={dateModified} />
         </hgroup>
         <div>
             <Content />

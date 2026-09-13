@@ -2,7 +2,6 @@
 import FormattedDate from "@components/FormattedDate.astro"
 
 interface Props {
-    author: string
     body: string
     dateModified?: Date | null
     datePublished: Date
@@ -10,18 +9,14 @@ interface Props {
     title: string
 }
 
-const { href, title, body, datePublished, dateModified, author } = Astro.props
+const { href, title, body, datePublished, dateModified } = Astro.props
 ---
 
 <li>
     <a href={href}>
         <hgroup>
             <h2>{title}</h2>
-            <FormattedDate
-                datePublished={datePublished}
-                dateModified={dateModified}
-                author={author}
-            />
+            <FormattedDate datePublished={datePublished} dateModified={dateModified} />
         </hgroup>
         <div>{body}</div>
     </a>

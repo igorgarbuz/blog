@@ -22,9 +22,8 @@ const sortedPosts = filterAndSortPosts(posts)
         <section>
             <ul>
                 {sortedPosts.map(
-                    ({ data: { author, description, datePublished, dateModified, title }, id }) => (
+                    ({ data: { description, datePublished, dateModified, title }, id }) => (
                         <PostSummaryCard
-                            author={author}
                             body={description}
                             dateModified={dateModified}
                             datePublished={datePublished}

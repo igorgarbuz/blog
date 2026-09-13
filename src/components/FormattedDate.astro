@@ -3,19 +3,18 @@ import { formatDate } from "@utils/date"
 interface Props {
     datePublished: Date
     dateModified?: Date | null
-    author: string
 }
-const { datePublished, dateModified, author } = Astro.props
+const { datePublished, dateModified } = Astro.props
 ---
 
 <div>
     Published: <time datetime={datePublished.toISOString()}>{formatDate(datePublished)}</time>
     {dateModified ? (
         <span>
-            | Updated: <time datetime={dateModified.toISOString()}>{formatDate(dateModified)}</time>
+            {" | "}Updated:{" "}
+            <time datetime={dateModified.toISOString()}>{formatDate(dateModified)}</time>
         </span>
     ) : null}
-    | Author: {author}
 </div>
 
 <style>
