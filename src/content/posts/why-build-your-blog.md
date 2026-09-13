@@ -16,10 +16,10 @@ description: Why bother building a blog despite the plethora of platforms like S
 
 This article is intended for people who are considering starting their own blog and:
 
--   Plan to write content that delves into technical or scientific topics
--   Want to own all aspects of their content
--   Are familiar with the basics of web development
--   Looking for a simple, lightweight and highly customizable solution
+- Plan to write content that delves into technical or scientific topics
+- Want to own all aspects of their content
+- Are familiar with the basics of web development
+- Looking for a simple, lightweight and highly customizable solution
 
 ## Introduction
 
@@ -55,27 +55,27 @@ It also raised a good point about a desirability of having a WYSIWYG-like rich e
 
 After deciding to build my blog there is a list of the things I need:
 
--   Markdown
--   Code syntax highlighting
--   LaTeX
--   Nice domain name
--   Basic analytics
--   [SSG](https://en.wikipedia.org/wiki/Static_site_generator) and lightweight
--   RSS feed
--   Search functionality
+- Markdown
+- Code syntax highlighting
+- LaTeX
+- Nice domain name
+- Basic analytics
+- [SSG](https://en.wikipedia.org/wiki/Static_site_generator) and lightweight
+- RSS feed
+- Search functionality
 
 To elaborate a little, SSG stands for the static site generation, as opposed to SSR (server side rendering) and CSR (client side rendering). It enables fastest page load times and a better user experience.
 
 The wishlist was promptly augmented with the following requirements:
 
--   Bare HTML/[CSS](https://www.w3schools.com/css/default.asp) with minimal non-dev dependencies
--   Dark/light theme switch
--   No theme colors flickering or layout shift
--   Minimal client side JavaScript
--   Well defined [meta tags](https://en.wikipedia.org/wiki/Meta_element) & [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization)
--   Scroll to a particular heading encoded in URL
--   Remark/Rehype plugins integration
--   Use [TypeScript](https://www.w3schools.com/typescript/index.php) instead of bare JavaScript
+- Bare HTML/[CSS](https://www.w3schools.com/css/default.asp) with minimal non-dev dependencies
+- Dark/light theme switch
+- No theme colors flickering or layout shift
+- Minimal client side JavaScript
+- Well defined [meta tags](https://en.wikipedia.org/wiki/Meta_element) & [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization)
+- Scroll to a particular heading encoded in URL
+- Remark/Rehype plugins integration
+- Use [TypeScript](https://www.w3schools.com/typescript/index.php) instead of bare JavaScript
 
 Here, meta tags allow control over how a post is displayed on social platform cards and in search results. The Remark/Rehype plugins ecosystem enables extensive customization and features, such as automatic table of contents, collapsible sections and LaTeX equations syntax support. The reference to "minimal non-dev dependencies" suggests that over-relying on external production-related libraries can bring more hassle than benefit in the long run due to increased complexity and lower reliability. On the other hand, development tools, such as [linters](<https://en.wikipedia.org/wiki/Lint_(software)>) and prettifiers, usually increase developer productivity and if one becomes deprecated, it can be removed without affecting the website's build and deployment process. Moreover, I prefer TypeScript over JavaScript because it offers type inference and I have an overall better developer experience with it. This preference is not a strict requirement, properly done JavaScript can be almost as effective.
 
@@ -124,8 +124,8 @@ For the styling, I've briefly considered quite popular [Tailwind CSS](https://ta
 
 Blogs typically feature various common layouts, with two of the most popular being:
 
--   [Hero image](https://vwo.com/glossary/hero-image/)
--   Boxed width
+- [Hero image](https://vwo.com/glossary/hero-image/)
+- Boxed width
 
 I have chosen the boxed width layout for its simplicity and relevance to technical writing. The hero image layout is more prevalent in business blogs, although some templates on Medium and Substack also utilize it. Finding a high-quality image for the hero section can be time-consuming and may detract from the primary content.
 

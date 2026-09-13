@@ -1,15 +1,67 @@
 ---
-import { ViewTransitions } from "astro:transitions"
+import { LOCALE, SITE } from "@config"
+import { ClientRouter } from "astro:transitions"
 
-const { author, canonicalUrl, dateModified, datePublished, description, ogImage, siteName, title } =
-    Astro.props
+type Props = {
+    author: string
+    canonicalUrl: string
+    dateModified?: Date | null
+    datePublished?: Date
+    description: string
+    headline: string
+    noindex?: boolean
+    ogImage: string
+    siteName: string
+    title: string
+}
+
+const {
+    author,
+    canonicalUrl,
+    dateModified,
+    datePublished,
+    description,
+    headline,
+    noindex = false,
+    ogImage,
+    siteName,
+    title,
+} = Astro.props
+
+const authorUrl = author === SITE.author ? new URL("about/", SITE.url).href : undefined
+const structuredData = datePublished
+    ? {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          author: { "@type": "Person", name: author, url: authorUrl },
+          dateModified: dateModified?.toISOString(),
+          datePublished: datePublished.toISOString(),
+          description,
+          headline,
+          image: [ogImage],
+          inLanguage: LOCALE.lang,
+          mainEntityOfPage: { "@id": canonicalUrl, "@type": "WebPage" },
+          url: canonicalUrl,
+      }
+    : canonicalUrl === SITE.url
+      ? {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            alternateName: new URL(SITE.url).hostname,
+            description,
+            inLanguage: LOCALE.lang,
+            name: siteName,
+            url: SITE.url,
+        }
+      : undefined
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon-64x64.png" />
-<link rel="canonical" href={canonicalUrl} />
+{!noindex && <link rel="canonical" href={canonicalUrl} />}
+{noindex && <meta name="robots" content="noindex, follow" />}
 <meta name="generator" content={Astro.generator} />
 
 {/* General Meta Tags */}
@@ -18,8 +70,15 @@ const { author, canonicalUrl, dateModified, datePublished, description, ogImage,
 <meta name="description" content={description} />
 <meta name="author" content={author} />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title={SITE.title}
+    href={new URL("rss.xml", SITE.url).href}
+/>
 
 {/* Open Graph / Facebook */}
+<meta property="og:type" content={datePublished ? "article" : "website"} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalUrl} />
@@ -34,12 +93,21 @@ const { author, canonicalUrl, dateModified, datePublished, description, ogImage,
 <meta name="twitter:image" content={ogImage} />
 
 {/* Article Published/Modified time */}
+{datePublished && authorUrl && <meta property="article:author" content={authorUrl} />}
 {datePublished && <meta property="article:published_time" content={datePublished.toISOString()} />}
 {dateModified && <meta property="article:modified_time" content={dateModified.toISOString()} />}
+
+{!noindex && structuredData && (
+    <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify(structuredData).replaceAll("<", "\\u003c")}
+    ></script>
+)}
 
 <meta name="theme-color" content="#15171a" />
 
 {/* Disable Dark Reader as the website already has the dark mode toggle */}
 <meta name="darkreader-lock" />
 
-<ViewTransitions />
+<ClientRouter />

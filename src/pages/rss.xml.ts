@@ -1,6 +1,6 @@
 import rss from "@astrojs/rss"
 import { getCollection } from "astro:content"
-import { SITE } from "@config"
+import { LOCALE, SITE } from "@config"
 import { stat } from "fs/promises"
 import path from "path"
 import { filterAndSortPosts } from "@utils/posts"
@@ -14,8 +14,8 @@ export const GET: APIRoute = async () => {
     const { title, description, ogImage, url } = SITE
 
     const items: RSSFeedItem[] = await Promise.all(
-        sortedPosts.map(async ({ data, slug }) => {
-            const { description, datePublished, dateModified, ogImage, title } = data
+        sortedPosts.map(async ({ data, id }) => {
+            const { description, datePublished, ogImage, title } = data
             const ogImageUrl = new URL(ogImage, url).href
             const publicDir = path.join(process.cwd(), "public")
             const ogImageFullPath = path.join(publicDir, ogImage)
@@ -31,8 +31,8 @@ export const GET: APIRoute = async () => {
                     type,
                     url: ogImageUrl,
                 },
-                link: `posts/${slug}/`,
-                pubDate: new Date(dateModified ?? datePublished),
+                link: `posts/${id}/`,
+                pubDate: datePublished,
                 title,
             }
         })
@@ -42,7 +42,7 @@ export const GET: APIRoute = async () => {
     const rssFeedUrl = new URL("/rss.xml", url).href
 
     return rss({
-        customData: `<language>en-us</language>
+        customData: `<language>${LOCALE.lang}</language>
             <atom:link href="${rssFeedUrl}" rel="self" type="application/rss+xml" />
             <image>
                 <url>${siteOgImage}</url>

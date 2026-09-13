@@ -16,18 +16,14 @@ const { href, title, body, datePublished, dateModified, author } = Astro.props
 <li>
     <a href={href}>
         <hgroup>
-            <h2>
-                {title}
-            </h2>
+            <h2>{title}</h2>
             <FormattedDate
                 datePublished={datePublished}
                 dateModified={dateModified}
                 author={author}
             />
         </hgroup>
-        <div>
-            {body}
-        </div>
+        <div>{body}</div>
     </a>
 </li>
 

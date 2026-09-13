@@ -1,8 +1,9 @@
-import eslintPluginAstro from 'eslint-plugin-astro';
-import tsEslint from 'typescript-eslint';
-import eslint from "@eslint/js";
+import eslint from "@eslint/js"
+import { defineConfig } from "eslint/config"
+import eslintPluginAstro from "eslint-plugin-astro"
+import tsEslint from "typescript-eslint"
 
-export default tsEslint.config(
+export default defineConfig(
     {
         ignores: ["dist/*", "public/*", ".astro/*"],
     },

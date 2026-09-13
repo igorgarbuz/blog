@@ -3,6 +3,7 @@ import remarkToc from "remark-toc"
 import sitemap from "@astrojs/sitemap"
 import remarkMath from "remark-math"
 import rehypeMathjax from "rehype-mathjax"
+import { unified } from "@astrojs/markdown-remark"
 import { SITE } from "./src/config"
 import { defineConfig } from "astro/config"
 
@@ -18,18 +19,20 @@ const CONTENTS_PATTERN = "table of contents"
 export default defineConfig({
     integrations: [sitemap()],
     markdown: {
-        rehypePlugins: [rehypeMathjax],
-        remarkPlugins: [
-            [remarkToc, { heading: CONTENTS_PATTERN }],
-            [
-                remarkCollapse,
-                {
-                    summary: (toc: string) => toc,
-                    test: CONTENTS_PATTERN,
-                },
+        processor: unified({
+            rehypePlugins: [rehypeMathjax],
+            remarkPlugins: [
+                [remarkToc, { heading: CONTENTS_PATTERN }],
+                [
+                    remarkCollapse,
+                    {
+                        summary: (toc: string) => toc,
+                        test: CONTENTS_PATTERN,
+                    },
+                ],
+                remarkMath,
             ],
-            remarkMath,
-        ],
+        }),
         shikiConfig: {
             theme: "dark-plus", // used for dark and light themes
             wrap: true,

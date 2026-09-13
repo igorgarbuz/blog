@@ -9,14 +9,12 @@ const { datePublished, dateModified, author } = Astro.props
 ---
 
 <div>
-    Published: <time>{formatDate(datePublished)}</time>
-    {
-        dateModified ? (
-            <span>
-                | Updated: <time>{formatDate(dateModified)}</time>
-            </span>
-        ) : null
-    }
+    Published: <time datetime={datePublished.toISOString()}>{formatDate(datePublished)}</time>
+    {dateModified ? (
+        <span>
+            | Updated: <time datetime={dateModified.toISOString()}>{formatDate(dateModified)}</time>
+        </span>
+    ) : null}
     | Author: {author}
 </div>
 

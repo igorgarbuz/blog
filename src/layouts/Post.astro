@@ -1,7 +1,7 @@
 ---
 // Nesting layouts can be a good practice, like described in https://docs.astro.build/en/tutorial/4-layouts/3/
 import Base from "./Base.astro"
-import type { CollectionEntry } from "astro:content"
+import { render, type CollectionEntry } from "astro:content"
 import FormattedDate from "@components/FormattedDate.astro"
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { post } = Astro.props
-const { Content } = await post.render()
+const { Content } = await render(post)
 
 const { data } = post
 
@@ -48,11 +48,9 @@ const { author, datePublished, dateModified, title } = data
     }
 </style>
 
-{
-    /**
-     * Converted to global to make work classes for elements generated with JS
-     */
-}
+{/**
+ * Converted to global to make work classes for elements generated with JS
+ */}
 <style is:global>
     .copy-code-button {
         align-items: center;
@@ -76,7 +74,7 @@ const { author, datePublished, dateModified, title } = data
     /* Prevent sticky hover state on touch devices */
     @media (hover: hover) {
         .copy-code-button:hover {
-            background-color: hsla(0deg 0% 100% / 10%);
+            background-color: hsl(0deg 0% 100% / 10%);
         }
     }
 
@@ -124,22 +122,20 @@ const { author, datePublished, dateModified, title } = data
     }
 </style>
 
-{
-    /**
-     * Following is a sort of "hacking" into shiki styled code block.
-     * It's neither elegant nor efficient, but it works.
-     * There could be a better way to do this and a user of this code is
-     * encouraged to try finding out how to avoid this client JS.
-     *
-     * In iOS navigator.clipboard.writeText is only testable
-     * in production with HTTPS. `navigator.clipboard`` API has
-     * certain restrictions and does not work in development mode.
-     *
-     * Add fragment identifiers to headings c.f https://developer.mozilla.org/en-US/docs/Web/Text_fragments
-     *
-     * Use inline script to avoid bundling and execute faster that prevent flickering on render
-     */
-}
+{/**
+ * Following is a sort of "hacking" into shiki styled code block.
+ * It's neither elegant nor efficient, but it works.
+ * There could be a better way to do this and a user of this code is
+ * encouraged to try finding out how to avoid this client JS.
+ *
+ * In iOS navigator.clipboard.writeText is only testable
+ * in production with HTTPS. `navigator.clipboard`` API has
+ * certain restrictions and does not work in development mode.
+ *
+ * Add fragment identifiers to headings c.f https://developer.mozilla.org/en-US/docs/Web/Text_fragments
+ *
+ * Use inline script to avoid bundling and execute faster that prevent flickering on render
+ */}
 <script is:inline>
     function addHeadingLinks() {
         document.querySelectorAll("h2, h3, h4, h5, h6").forEach(heading => {

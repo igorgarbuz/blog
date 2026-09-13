@@ -1,5 +1,7 @@
 import { SITE } from "@config"
-import { z, defineCollection } from "astro:content"
+import { defineCollection } from "astro:content"
+import { glob } from "astro/loaders"
+import { z } from "astro/zod"
 
 /**
  * Post title should be defined in the frontmatter of the .md file, and not inside
@@ -12,7 +14,7 @@ import { z, defineCollection } from "astro:content"
  */
 export const schema = z.object({
     author: z.string().default(SITE.author),
-    canonicalUrl: z.string().url().optional(), // only if article was initially published under another URL
+    canonicalUrl: z.url().optional(), // only if article was initially published under another URL
     dateModified: z.date().optional().nullable(),
     datePublished: z.date(),
     description: z.string().max(160, {
@@ -28,8 +30,8 @@ export const schema = z.object({
 })
 
 const postsCollection = defineCollection({
+    loader: glob({ base: "./src/content/posts", pattern: "**/*.{md,mdx}" }),
     schema,
-    type: "content",
 })
 
 export const collections = { posts: postsCollection }

@@ -9,6 +9,7 @@ import BaseHead from "@components/BaseHead.astro"
 
 type Props = {
     frontmatter?: Partial<CollectionEntry<"posts">["data"]>
+    noindex?: boolean
 }
 
 /**
@@ -16,6 +17,7 @@ type Props = {
  * by any .md file directly https://docs.astro.build/en/basics/layouts/
  */
 const {
+    noindex = false,
     frontmatter: {
         author = SITE.author,
         canonicalUrl = new URL(Astro.url.pathname, Astro.site).href,
@@ -27,9 +29,9 @@ const {
     } = {},
 } = Astro.props
 
-const ogImageUrl = new URL(ogImage, Astro.url.origin).href
+const ogImageUrl = new URL(ogImage, SITE.url).href
 
-let pageTitle = title ? `${title} • ${SITE.siteName}` : SITE.title
+const pageTitle = title ? `${title} • ${SITE.siteName}` : SITE.title
 ---
 
 <!doctype html>
@@ -41,14 +43,15 @@ let pageTitle = title ? `${title} • ${SITE.siteName}` : SITE.title
             dateModified={dateModified}
             datePublished={datePublished}
             description={description}
+            headline={title ?? SITE.title}
+            noindex={noindex}
             ogImage={ogImageUrl}
             siteName={SITE.siteName}
             title={pageTitle}
         />
     </head>
     <body>
-        {
-            /* Inline script to set the theme based on the user's preference or the default theme
+        {/* Inline script to set the theme based on the user's preference or the default theme
             implemented as IIFE inline script to avoid FOUC (Flash of Unstyled Content) when the theme is set.
             This script is blocking the rendering of the page until it is executed, but given it's size it's negligible.
             Placing it just after the <body> tag ensures that the 'document' object is available.
@@ -56,8 +59,7 @@ let pageTitle = title ? `${title} • ${SITE.siteName}` : SITE.title
             This will introduce an additional network request, will require adding document.addEventListener('DOMContentLoaded', ...)
             listener, and, given asynchronous nature, won't guarantee that the script execution ends before layout is rendered,
             event thought 99.9% of the time it will be executed before the layout.
-            */
-        }
+            */}
         <script is:inline>
             ;(function () {
                 const currentTheme =
@@ -68,16 +70,13 @@ let pageTitle = title ? `${title} • ${SITE.siteName}` : SITE.title
                 localStorage.setItem("theme", currentTheme)
             })()
         </script>
-
         <Header />
-        {
-            /* Current layout assumes everything in main is centered
+        {/* Current layout assumes everything in main is centered
         and has the same width defined in the <main> tag (c.f global.css). If needed to have
         a more complex design where the banner (i.e hero image) is wider than the main textual content,
         it is recommended to define the text content width in a new class (e.g .prose)
         and increase the width for <main> up to the hero image width.
-        */
-        }
+        */}
         <main>
             <slot />
         </main>

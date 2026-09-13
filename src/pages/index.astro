@@ -14,34 +14,28 @@ const sortedPosts = filterAndSortPosts(posts)
         <h1>Posts</h1>
         <p>
             Hey there 👋, I'm Igor. Below are my notes on software, machine learning and hardware.
-            Hope you find something useful. Feedback is very welcome, feel free to reach out on <a
-                href="https://twitter.com/igarbuz">X</a
-            >.
+            Hope you find something useful. Feedback is very welcome, feel free to reach out on{" "}
+            <a href="https://twitter.com/igarbuz">X</a>.
         </p>
     </hgroup>
-    {
-        sortedPosts.length > 0 && (
-            <section>
-                <ul>
-                    {sortedPosts.map(
-                        ({
-                            data: { author, description, datePublished, dateModified, title },
-                            slug,
-                        }) => (
-                            <PostSummaryCard
-                                author={author}
-                                body={description}
-                                dateModified={dateModified}
-                                datePublished={datePublished}
-                                href={`/posts/${slug}`}
-                                title={title}
-                            />
-                        )
-                    )}
-                </ul>
-            </section>
-        )
-    }
+    {sortedPosts.length > 0 && (
+        <section>
+            <ul>
+                {sortedPosts.map(
+                    ({ data: { author, description, datePublished, dateModified, title }, id }) => (
+                        <PostSummaryCard
+                            author={author}
+                            body={description}
+                            dateModified={dateModified}
+                            datePublished={datePublished}
+                            href={`/posts/${id}`}
+                            title={title}
+                        />
+                    )
+                )}
+            </ul>
+        </section>
+    )}
 </Base>
 
 <style>

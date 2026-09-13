@@ -257,40 +257,40 @@ function sayHelloInFiveSeconds(name) {
 **Syntax**
 
 ```markdown
--   List item
--   Another item
--   And another item
+- List item
+- Another item
+- And another item
 ```
 
 **Output**
 
--   List item
--   Another item
--   And another item
+- List item
+- Another item
+- And another item
 
 ### Nested list
 
 **Syntax**
 
 ```markdown
--   Fruit
-    -   Apple
-    -   Orange
-    -   Banana
--   Dairy
-    -   Milk
-    -   Cheese
+- Fruit
+    - Apple
+    - Orange
+    - Banana
+- Dairy
+    - Milk
+    - Cheese
 ```
 
 **Output**
 
--   Fruit
-    -   Apple
-    -   Orange
-    -   Banana
--   Dairy
-    -   Milk
-    -   Cheese
+- Fruit
+    - Apple
+    - Orange
+    - Banana
+- Dairy
+    - Milk
+    - Cheese
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 

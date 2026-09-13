@@ -1,7 +1,7 @@
 ---
 layout: "../layouts/Base.astro"
-title: "Bio and contacts of Igor Garbuz"
-description: "About me and my journey through AI and technology"
+title: "About"
+description: "Meet Igor Garbuz, a freelance software engineer interested in AI, web technologies, and hardware projects. Background, interests, and contact details."
 ---
 
 # hi 👋 !
